@@ -3097,7 +3097,7 @@ document.addEventListener("keydown", event => {
 });
 
 
-const UPDATE_INTERVAL = 30 * 60 * 1000;  
+const UPDATE_INTERVAL = 60 * 1000;  
   
 const leagues = [
   // INGGRIS
@@ -3278,41 +3278,50 @@ function parseEvent(event, league) {
   };
 }
 
-async function fetchLeagueWindow(league, dates) {
-  const url = espnUrl(league.id, "scoreboard", `dates=${dates}&limit=500`);
-  const response = await fetch(url, {cache:"no-store"});
-  if (!response.ok) throw new Error(`${league.name}: HTTP ${response.status}`);
+// SKORKITA-DATA-FIX-V2: fetch scoreboard default first; always retry on date-query failures.
+async function fetchLeagueWindow(league, dates = "") {
+  const query = dates ? `dates=${dates}&limit=250` : `limit=250`;
+  const response = await fetch(espnUrl(league.id, "scoreboard", query), {cache:"no-store"});
+  if (!response.ok) throw new Error(`${league.id} HTTP ${response.status} (${dates || "default"})`);
   const data = await response.json();
-  return (data.events || []).map(event => parseEvent(event, league)).filter(Boolean);
+  if (!Array.isArray(data.events)) throw new Error(`${league.id} respons events tidak ada`);
+  return data.events.map(event => parseEvent(event, league)).filter(Boolean);
 }
 async function fetchAllMatches() {
-  // Rentang lebih luas menghindari layar kosong ketika ada jeda kompetisi.
-  const dates = `${getDateOffset(-2)}-${getDateOffset(16)}`;
   const unique = new Map();
   const failures = [];
-  // Batasi paralel request agar lebih ramah terhadap API dan jaringan.
+  const successes = [];
   const queue = [...leagues];
+  // Endpoint tanpa dates terbukti menghasilkan pertandingan; ambil ini lebih dulu.
+  // Rentang tanggal hanya tambahan untuk liga populer, tidak boleh menghalangi data default.
+  const popular = new Set(["eng.1","esp.1","ita.1","ger.1","fra.1","uefa.champions","uefa.europa","usa.1","idn.1","fifa.friendly"]);
+  const dates = `${getDateOffset(-7)}-${getDateOffset(21)}`;
   const worker = async () => {
     while (queue.length) {
       const league = queue.shift();
-      try {
-        const matches = await fetchLeagueWindow(league, dates);
-        for (const match of matches) unique.set(`${match.lid}:${match.id}`, match);
-      } catch (error) { failures.push(error.message); }
+      let received = false;
+      // Kegagalan salah satu request tidak membatalkan request lainnya.
+      for (const period of popular.has(league.id) ? ["",dates] : [""]) {
+        try {
+          const matches = await fetchLeagueWindow(league,period);
+          received = true;
+          for (const match of matches) unique.set(`${match.lid}:${match.id}`,match);
+        } catch (error) { failures.push(error.message); }
+      }
+      if (received) successes.push(league.id);
     }
   };
-  await Promise.all(Array.from({length:Math.min(5,leagues.length)},worker));
-  const now = Date.now();
-  const matches = [...unique.values()]
-    .filter(match => {
-      const k = new Date(match.date).getTime();
-      return k >= now-2*86400000 && k <= now+17*86400000;
-    })
-    .sort((a,b) => new Date(a.date) - new Date(b.date));
-  if (!matches.length && failures.length === leagues.length) {
-    throw new Error(`Semua sumber ESPN gagal: ${failures.slice(0,3).join("; ")}`);
-  }
-  if (failures.length) console.warn("Sebagian liga gagal dimuat:",failures);
+  await Promise.all(Array.from({length:Math.min(4,leagues.length)},worker));
+  // Featured match: LIVE, pertandingan terdekat, lalu hasil terbaru.
+  const matches = [...unique.values()].sort((a,b) => {
+    const rank = m => m.state === 'LIVE' ? 0 : (m.state === 'MENDATANG' ? 1 : 2);
+    const r=rank(a)-rank(b); if(r) return r;
+    return a.state === 'SELESAI' ? new Date(b.date)-new Date(a.date) : new Date(a.date)-new Date(b.date);
+  });
+  const status = document.getElementById('skorkita-api-status');
+  if (status) status.textContent = `V2 · ${matches.length} pertandingan · ${successes.length}/${leagues.length} liga terhubung${failures.length ? ' · '+failures.length+' request gagal' : ''}`;
+  if (!successes.length) throw new Error(`Tidak ada liga yang berhasil: ${failures.slice(0,3).join('; ')}`);
+  if (failures.length) console.warn('SkorKita: beberapa request gagal',failures);
   return matches;
 }
 
@@ -3784,7 +3793,7 @@ function renderFixtures() {
   $("fixtureList").innerHTML = games.length
     ? games.map(fixture).join("")
     : `<div style="padding:22px;text-align:center;color:#b8b8b8">
-        Tidak ada jadwal yang tersedia untuk hari ini dan besok.
+        Belum ada jadwal tersedia dari liga yang dipantau. Coba perbarui nanti.
       </div>`;
 }
 
@@ -3846,7 +3855,7 @@ async function loadMatches() {
     if (!games.length) {
       $("heroContent").innerHTML =
         `<div style="padding:35px;text-align:center">
-          Gagal mengambil data ESPN. Jika memakai Netlify, cek <code>/.netlify/functions/espn?league=eng.1&path=scoreboard</code>. Jika lokal, kemungkinan akses browser terkena pembatasan CORS.
+          Gagal mengambil data ESPN: ${esc(error.message)}. Periksa endpoint /.netlify/functions/espn?league=eng.1&amp;path=scoreboard dan log Functions di Netlify.
         </div>`;
     }
 
@@ -5571,5 +5580,6 @@ footer {
 
 </style>
 
+<div id="skorkita-api-status" style="position:fixed;right:10px;bottom:10px;z-index:999;background:#10263c;color:#b8ffe7;border:1px solid #337a75;border-radius:8px;padding:7px 10px;font:11px system-ui;max-width:calc(100vw - 20px)">SkorKita DATA FIX V2 · Memuat...</div>
 </body>
 </html>

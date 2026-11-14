@@ -1,17 +1,16 @@
-# SkorKita Full — ESPN API
+# SkorKita FIX DATA V2
 
-Versi rebranding dari kode HTML yang kamu berikan; menggunakan kartu pertandingan, logo klub, detail pertandingan, filter liga, skor langsung, dan statistik.
+Masalah yang diperbaiki:
+- Versi lama memanggil rentang 59 hari dulu, lalu hanya fallback bila hasilnya kosong; bila server melempar HTTP error fallback dilewati.
+- V2 mengambil scoreboard default terlebih dahulu (seperti JSON yang sudah berhasil Anda buka).
+- Untuk 10 liga utama menambah range -7/+21 hari; error range tak menghapus hasil default.
+- Menampilkan status V2 dan jumlah liga berhasil di kanan bawah sehingga bisa memastikan versi yang deploy.
+- Featured match mengutamakan LIVE, jadwal dekat, lalu hasil terbaru.
+- Mengurangi concurrency menjadi 4.
 
-## Cara deploy
-1. Upload ZIP ini menggunakan Netlify (pilih *Import project* dari repo bila ingin otomatis mengaktifkan Functions), atau deploy folder sumber lewat Netlify CLI (`netlify deploy --prod --dir . --functions netlify/functions`).
-2. Pastikan Netlify mendeteksi `netlify/functions/espn.js` sebagai Function. Untuk upload manual via Netlify Drop, Functions biasanya **tidak** ikut terdeploy; gunakan Git atau CLI.
-3. Tes URL `https://DOMAIN-ANDA.netlify.app/.netlify/functions/espn?league=eng.1&path=scoreboard`. Jika tampil JSON, koneksi backend berhasil.
-4. Buka website dan tekan Perbarui Pertandingan.
+### Upload ke repo GitHub
+Di repository Anda, buka folder SkorKita_ESPN_Starter lalu **ganti `index.html` dengan `index.html` dalam ZIP ini**. Folder Netlify Functions dan konfigurasi tidak perlu diubah karena endpoint sudah berhasil memberi JSON. Commit lalu pastikan deploy Netlify Published. Refresh paksa halaman.
 
-## Catatan
-- Tidak ada API key; endpoint ESPN ini bersifat publik tetapi tidak resmi, dapat berubah dan tidak ada jaminan izin penggunaan komersial.
-- Kode mencoba rentang 2 hari ke belakang hingga 16 hari ke depan supaya jeda kompetisi tidak membuat tampilan kosong.
-- Jika dibuka langsung sebagai file lokal, fungsi proxy tidak berjalan dan koneksi ESPN bisa mengalami CORS. Gunakan `netlify dev` untuk tes local end-to-end.
-- Fitur prediksi adalah simulasi sederhana dari nama tim. Tidak akurat secara ilmiah, bukan AI dan bukan odds resmi.
-- Branding MASKERTOTO, link promosi, widget Zendesk, dan skrip pengunci shortcut telah dihapus.
-- Tidak ada pertandingan palsu yang dibuat sebagai fallback. Jika sumber gagal, tampil error.
+**Verifikasi wajib**: di pojok kanan bawah harus muncul `V2`. Jika tidak ada, halaman yang dibuka masih versi sebelumnya. Jika V2 terlihat tetapi kosong, kirim teks status dan Console error.
+
+Endpoint ESPN yang dipakai adalah tidak resmi; tidak ada jaminan cakupan liga dan ketersediaan layanan.
