@@ -3097,7 +3097,7 @@ document.addEventListener("keydown", event => {
 });
 
 
-const UPDATE_INTERVAL = 30 * 60 * 1000;  
+const UPDATE_INTERVAL = 60 * 1000;  
   
 const leagues = [
   // INGGRIS
@@ -3278,41 +3278,37 @@ function parseEvent(event, league) {
   };
 }
 
-async function fetchLeagueWindow(league, dates) {
-  const url = espnUrl(league.id, "scoreboard", `dates=${dates}&limit=500`);
-  const response = await fetch(url, {cache:"no-store"});
+async function fetchLeagueWindow(league, dates = "") {
+  const query = dates ? `dates=${dates}&limit=500` : `limit=500`;
+  const response = await fetch(espnUrl(league.id, "scoreboard", query), {cache:"no-store"});
   if (!response.ok) throw new Error(`${league.name}: HTTP ${response.status}`);
   const data = await response.json();
-  return (data.events || []).map(event => parseEvent(event, league)).filter(Boolean);
+  return (Array.isArray(data.events) ? data.events : [])
+    .map(event => parseEvent(event, league)).filter(Boolean);
 }
 async function fetchAllMatches() {
-  // Rentang lebih luas menghindari layar kosong ketika ada jeda kompetisi.
-  const dates = `${getDateOffset(-2)}-${getDateOffset(16)}`;
+  // Jadwal utama: 14 hari ke belakang dan 45 hari mendatang.
+  // Saat ESPN tidak mengisi rentang itu, coba scoreboard default per liga.
+  const dates = `${getDateOffset(-14)}-${getDateOffset(45)}`;
   const unique = new Map();
   const failures = [];
-  // Batasi paralel request agar lebih ramah terhadap API dan jaringan.
   const queue = [...leagues];
   const worker = async () => {
     while (queue.length) {
       const league = queue.shift();
       try {
-        const matches = await fetchLeagueWindow(league, dates);
+        let matches = await fetchLeagueWindow(league, dates);
+        if (!matches.length) matches = await fetchLeagueWindow(league);
         for (const match of matches) unique.set(`${match.lid}:${match.id}`, match);
       } catch (error) { failures.push(error.message); }
     }
   };
-  await Promise.all(Array.from({length:Math.min(5,leagues.length)},worker));
-  const now = Date.now();
-  const matches = [...unique.values()]
-    .filter(match => {
-      const k = new Date(match.date).getTime();
-      return k >= now-2*86400000 && k <= now+17*86400000;
-    })
-    .sort((a,b) => new Date(a.date) - new Date(b.date));
+  await Promise.all(Array.from({length:Math.min(6,leagues.length)},worker));
+  const matches = [...unique.values()].sort((a,b) => new Date(a.date) - new Date(b.date));
   if (!matches.length && failures.length === leagues.length) {
     throw new Error(`Semua sumber ESPN gagal: ${failures.slice(0,3).join("; ")}`);
   }
-  if (failures.length) console.warn("Sebagian liga gagal dimuat:",failures);
+  if (failures.length) console.warn("Sebagian liga gagal dimuat:", failures);
   return matches;
 }
 
@@ -3784,7 +3780,7 @@ function renderFixtures() {
   $("fixtureList").innerHTML = games.length
     ? games.map(fixture).join("")
     : `<div style="padding:22px;text-align:center;color:#b8b8b8">
-        Tidak ada jadwal yang tersedia untuk hari ini dan besok.
+        Belum ada jadwal tersedia dari liga yang dipantau. Coba perbarui nanti.
       </div>`;
 }
 
@@ -3846,7 +3842,7 @@ async function loadMatches() {
     if (!games.length) {
       $("heroContent").innerHTML =
         `<div style="padding:35px;text-align:center">
-          Gagal mengambil data ESPN. Jika memakai Netlify, cek <code>/.netlify/functions/espn?league=eng.1&path=scoreboard</code>. Jika lokal, kemungkinan akses browser terkena pembatasan CORS.
+          Gagal mengambil data ESPN: ${esc(error.message)}. Periksa endpoint /.netlify/functions/espn?league=eng.1&amp;path=scoreboard dan log Functions di Netlify.
         </div>`;
     }
 
