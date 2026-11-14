@@ -1,16 +1,22 @@
-# SkorKita FIX DATA V2
+# SkorKita V3 — Urut Tanggal
 
-Masalah yang diperbaiki:
-- Versi lama memanggil rentang 59 hari dulu, lalu hanya fallback bila hasilnya kosong; bila server melempar HTTP error fallback dilewati.
-- V2 mengambil scoreboard default terlebih dahulu (seperti JSON yang sudah berhasil Anda buka).
-- Untuk 10 liga utama menambah range -7/+21 hari; error range tak menghapus hasil default.
-- Menampilkan status V2 dan jumlah liga berhasil di kanan bawah sehingga bisa memastikan versi yang deploy.
-- Featured match mengutamakan LIVE, jadwal dekat, lalu hasil terbaru.
-- Mengurangi concurrency menjadi 4.
+Berbasis SkorKita FIX DATA V2 dengan koneksi ESPN yang sama.
 
-### Upload ke repo GitHub
-Di repository Anda, buka folder SkorKita_ESPN_Starter lalu **ganti `index.html` dengan `index.html` dalam ZIP ini**. Folder Netlify Functions dan konfigurasi tidak perlu diubah karena endpoint sudah berhasil memberi JSON. Commit lalu pastikan deploy Netlify Published. Refresh paksa halaman.
+- Kartu liga dan tabel Jadwal & Hasil diurutkan menurut kickoff kronologis (awal ke akhir), bukan status LIVE → mendatang → selesai.
+- Hasil yang sudah lebih dari 48 jam tidak dimasukkan dalam kartu dan tabel utama, mengikuti aturan pada kode MASKERTOTO yang dikirim.
+- Jam ditampilkan dalam WIB; pengurutan memakai timestamp ISO ESPN sehingga tidak bergeser lintas zona waktu.
+- Jika kickoff sama, urutkan berdasarkan liga lalu ID pertandingan agar stabil.
+- Hero unggulan masih mengikuti prioritas sebelumnya.
+- Tanda status bawah: `V3 URUT`.
 
-**Verifikasi wajib**: di pojok kanan bawah harus muncul `V2`. Jika tidak ada, halaman yang dibuka masih versi sebelumnya. Jika V2 terlihat tetapi kosong, kirim teks status dan Console error.
+## Pasang
+Ganti HANYA `index.html` di folder GitHub `SkorKita_ESPN_Starter`, commit, tunggu Published. Tidak perlu mengubah Functions maupun Build Settings. Perlu diuji pada Netlify.
 
-Endpoint ESPN yang dipakai adalah tidak resmi; tidak ada jaminan cakupan liga dan ketersediaan layanan.
+Catatan: urutan bisa berbeda dari MASKERTOTO jika waktu pemuatan, kumpulan liga, rentang request, atau filter tidak sama persis.
+
+
+## Logo resmi SkorKita V4
+- `skorkita-logo-resmi.png`: logo shield berwarna biru-emas dengan latar transparan.
+- `favicon.png` dan `apple-touch-icon.png`: ikon berbasis logo.
+- `index.html` diubah hanya pada bagian branding dan ukuran header, tidak mengubah ESPN atau fungsi jadwal.
+- Upload seluruh isi paket ini ke direktori repository GitHub `SkorKita_ESPN_Starter/`, mengganti file sama nama dan menambah 3 gambar PNG. Jangan menaruh folder pembungkus V4 di dalam direktori proyek.

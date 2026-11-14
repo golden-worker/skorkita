@@ -8,7 +8,8 @@
         
   <title>SkorKita | Live Score, Jadwal & Statistik Sepak Bola</title>
 <meta name="description" content="SkorKita menyediakan jadwal, live score, hasil dan statistik sepak bola berbagai liga. Data pertandingan bersumber dari ESPN." />
-<link rel="icon" type="image/svg+xml" href="./skorkita-logo.svg" />
+<link rel="icon" type="image/png" href="./favicon.png" />
+<link rel="apple-touch-icon" href="./apple-touch-icon.png" />
 <style>
 :root {
   --navy:#101b2a;
@@ -2222,6 +2223,23 @@ header #navMenu.navlinks a:hover {
   box-shadow: 0 8px 20px rgba(100, 12, 25, .24), 0 0 0 2px rgba(231,189,98,.18) !important;
   transform: translateY(-2px);
 }
+
+/* SKORKITA LOGO RESMI - V4: only branding, no ESPN data logic changed */
+header { min-height: 78px; height: 78px; }
+header .nav { min-height: 78px; height: 100%; }
+header a.brand { display: inline-flex; align-items: center; flex-shrink: 0; max-width: min(310px, 54vw); }
+header .brand-logo {
+  display: block; width: 230px; height: 72px; max-width: 100%;
+  object-fit: contain; object-position: left center;
+  filter: drop-shadow(0 2px 3px rgba(0,0,0,.2));
+}
+@media(max-width:600px) {
+  header { min-height: 66px; height: 66px; }
+  header .nav { min-height: 66px; }
+  header a.brand { max-width: 56vw; }
+  header .brand-logo { width: 168px; height: 60px; max-width: 100%; }
+}
+
 </style>
 
 </head>
@@ -2232,7 +2250,7 @@ header #navMenu.navlinks a:hover {
 <div class="wrap nav">
 
   <!-- LOGO WEBSITE -->
-  <a class="brand" href="./index.html" aria-label="SkorKita beranda"><img class="brand-logo" src="./skorkita-logo.svg" alt="Logo SkorKita"></a>
+  <a class="brand" href="./index.html" aria-label="SkorKita beranda"><img class="brand-logo" src="./skorkita-logo-resmi.png" alt="Logo resmi SkorKita"></a>
 
   <!-- TOMBOL MENU -->
   <button
@@ -3278,7 +3296,7 @@ function parseEvent(event, league) {
   };
 }
 
-// SKORKITA-DATA-FIX-V2: fetch scoreboard default first; always retry on date-query failures.
+// SKORKITA-ORDER-V3: fetch scoreboard default first; always retry on date-query failures.
 async function fetchLeagueWindow(league, dates = "") {
   const query = dates ? `dates=${dates}&limit=250` : `limit=250`;
   const response = await fetch(espnUrl(league.id, "scoreboard", query), {cache:"no-store"});
@@ -3319,7 +3337,7 @@ async function fetchAllMatches() {
     return a.state === 'SELESAI' ? new Date(b.date)-new Date(a.date) : new Date(a.date)-new Date(b.date);
   });
   const status = document.getElementById('skorkita-api-status');
-  if (status) status.textContent = `V2 · ${matches.length} pertandingan · ${successes.length}/${leagues.length} liga terhubung${failures.length ? ' · '+failures.length+' request gagal' : ''}`;
+  if (status) status.textContent = `V3 URUT · ${matches.length} pertandingan · ${successes.length}/${leagues.length} liga terhubung${failures.length ? ' · '+failures.length+' request gagal' : ''}`;
   if (!successes.length) throw new Error(`Tidak ada liga yang berhasil: ${failures.slice(0,3).join('; ')}`);
   if (failures.length) console.warn('SkorKita: beberapa request gagal',failures);
   return matches;
@@ -3773,11 +3791,34 @@ function fixture(match) {
 }
 
 /* ==========================================
+   URUTAN PERTANDINGAN - SELARAS REFERENSI MASKERTOTO
+   Kickoff paling awal dulu (WIB hanya untuk tampilan),
+   hasil lebih lama dari 48 jam tidak masuk daftar utama.
+   Hero tetap punya prioritas LIVE pada fungsi aslinya.
+========================================== */
+function chronologicalMatches(matches) {
+  return [...matches].sort((a,b) => {
+    const diff = Date.parse(a.date) - Date.parse(b.date);
+    if (diff) return diff;
+    const lg = String(a.league).localeCompare(String(b.league),'id');
+    if (lg) return lg;
+    return String(a.id).localeCompare(String(b.id));
+  });
+}
+function visibleMatches() {
+  const cutoff = Date.now() - (48 * 60 * 60 * 1000);
+  return chronologicalMatches(games.filter(m => {
+    const kickoff = Date.parse(m.date);
+    return Number.isFinite(kickoff) && kickoff >= cutoff;
+  }));
+}
+
+/* ==========================================
    RENDER KARTU
 ========================================== */
 
 function renderCards() {
-  const list = games.filter(match =>
+  const list = visibleMatches().filter(match =>
     leagueFilter === "all" ||
     match.lid === leagueFilter
   );
@@ -3785,15 +3826,16 @@ function renderCards() {
   $("matchGrid").innerHTML = list.length
     ? list.map(card).join("")
     : `<div style="padding:20px;color:#b8b8b8">
-        Tidak ada pertandingan pada liga ini.
+        Tidak ada pertandingan terbaru (48 jam terakhir) atau jadwal mendatang pada liga ini.
       </div>`;
 }
 
 function renderFixtures() {
-  $("fixtureList").innerHTML = games.length
-    ? games.map(fixture).join("")
+  const list = visibleMatches();
+  $("fixtureList").innerHTML = list.length
+    ? list.map(fixture).join("")
     : `<div style="padding:22px;text-align:center;color:#b8b8b8">
-        Belum ada jadwal tersedia dari liga yang dipantau. Coba perbarui nanti.
+        Tidak ada hasil terbaru (48 jam terakhir) atau jadwal mendatang dari liga yang dipantau.
       </div>`;
 }
 
