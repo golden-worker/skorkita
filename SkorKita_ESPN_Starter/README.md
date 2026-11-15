@@ -20,3 +20,7 @@ Catatan: urutan bisa berbeda dari MASKERTOTO jika waktu pemuatan, kumpulan liga,
 - `favicon.png` dan `apple-touch-icon.png`: ikon berbasis logo.
 - `index.html` diubah hanya pada bagian branding dan ukuran header, tidak mengubah ESPN atau fungsi jadwal.
 - Upload seluruh isi paket ini ke direktori repository GitHub `SkorKita_ESPN_Starter/`, mengganti file sama nama dan menambah 3 gambar PNG. Jangan menaruh folder pembungkus V4 di dalam direktori proyek.
+
+
+## SkorKita Blue Black Edition
+Tema dark gradasi biru-hitam. Featured Match menampilkan hingga 50 pertandingan dari data ESPN yang berhasil tersedia, navigasi panah dan slider otomatis. Jika jumlah laga tersedia kurang dari 50, angka ditampilkan sesuai data aktual; tidak membuat pertandingan palsu. File HTML kedua yang diberikan adalah kode halaman OneDrive, bukan tampilan referensi situs.

@@ -1,15 +1,14 @@
 <!DOCTYPE html>
+
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#690b19">
-        
-        
-  <title>SkorKita | Live Score, Jadwal & Statistik Sepak Bola</title>
-<meta name="description" content="SkorKita menyediakan jadwal, live score, hasil dan statistik sepak bola berbagai liga. Data pertandingan bersumber dari ESPN." />
-<link rel="icon" type="image/png" href="./favicon.png" />
-<link rel="apple-touch-icon" href="./apple-touch-icon.png" />
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1, viewport-fit=cover" name="viewport"/>
+<meta content="#690b19" name="theme-color"/>
+<title>SkorKita | Live Score, Jadwal &amp; Statistik Sepak Bola</title>
+<meta content="SkorKita menyediakan jadwal, live score, hasil dan statistik sepak bola berbagai liga. Data pertandingan bersumber dari ESPN." name="description">
+<link href="./favicon.png" rel="icon" type="image/png"/>
+<link href="./apple-touch-icon.png" rel="apple-touch-icon"/>
 <style>
 :root {
   --navy:#101b2a;
@@ -1760,8 +1759,6 @@ header #navMenu.navlinks a:hover {
   flex:initial !important;
 }
 </style>
-
-
 <style id="SKORKITA-blue-white-black-theme">
 /* SKORKITA — PALET BIRU, PUTIH, HITAM SAHAJA
    Logo/gambar logo asal sengaja tidak disentuh. */
@@ -1882,8 +1879,6 @@ main.wrap{background:linear-gradient(180deg,#fff,#eaf1fa)!important}
   header{background:linear-gradient(90deg,#050b16,#123b70)!important}
 }
 </style>
-
-
 <style id="SKORKITA-header-white-blue-override">
 /* SKORKITA: header controls putih-biru, logo asli tidak diubah */
 header .login-toggle {
@@ -1918,8 +1913,6 @@ header #navMenu.navlinks a:hover {
   color: #ffffff !important;
 }
 </style>
-
-
 <style id="SKORKITA-prediction-blue-white">
 /* SKORKITA: prediction cards blue / white palette */
 .motif-prediction {
@@ -1948,345 +1941,38 @@ header #navMenu.navlinks a:hover {
 
 
 
-<style id="SKORKITA-prediction-red-gold">
-/* Panel ESTIMASI PREDIKSI: samakan dengan tema merah maroon + gold */
-.motif-prediction {
-  background: linear-gradient(135deg, #3d0610 0%, #690b19 52%, #8f1728 100%) !important;
-  border: 1px solid #f0bd58 !important;
-  color: #fff4dc !important;
-  border-radius: 10px !important;
-  box-shadow: 0 5px 16px #4b10192b, inset 0 1px 0 #ffffff20 !important;
-}
-.motif-prediction b,
-.motif-prediction span,
-.motif-prediction strong {
-  color: #fff0d0 !important;
-}
-.motif-prediction > div:first-child > b {
-  color: #ffe2a0 !important;
-  text-shadow: 0 1px 2px #26040a80;
-}
-.motif-prediction > div:first-child > span {
-  background: linear-gradient(135deg, #ffe2a0, #d99a32) !important;
-  color: #57101a !important;
-  border: 1px solid #fff0c8 !important;
-  border-radius: 5px !important;
-  box-shadow: 0 2px 6px #26040a35;
-}
-.motif-prediction > div:nth-child(2) > span {
-  color: #fff0d0 !important;
-}
-.motif-prediction > div:nth-child(2) > strong,
-.motif-prediction > div:nth-child(3) strong {
-  color: #ffd36b !important;
-  text-shadow: 0 1px 5px #f3c15d35;
-}
-.motif-prediction > div:nth-child(3) > div {
-  background: linear-gradient(160deg, #590914, #3d0610) !important;
-  border: 1px solid #d9a344 !important;
-  border-radius: 7px !important;
-  box-shadow: inset 0 1px 0 #ffffff12;
-}
-.motif-prediction > div:nth-child(3) small {
-  color: #f5dcae !important;
-}
-.motif-prediction > div:nth-child(3) strong {
-  color: #ffd36b !important;
-}
-.motif-prediction > div:last-child,
-.motif-prediction p {
-  color: #f7e4c3 !important;
-}
 
-/* Pastikan aturan lama biru tidak mengambil alih panel prediksi */
-.motif-prediction [style*="background:#081a30"],
-.motif-prediction [style*="background: #081a30"],
-.motif-prediction [style*="background:#171717"],
-.motif-prediction [style*="background: #171717"] {
-  background: linear-gradient(160deg, #590914, #3d0610) !important;
-}
-</style>
-
-
-
-<style id="SKORKITA-modal-text-contrast">
-/* Perjelas tulisan pada popup lineup/statistik */
-.match-modal-dialog {
-  background: #fffdf8 !important;
-  color: #4b1019 !important;
-}
-
-/* Baris nama klub, formasi, dan skor di atas lapangan */
-.lineup-formation-wrap {
-  background: linear-gradient(145deg, #fffaf0, #fff0d5) !important;
-  border: 1px solid #d6a044 !important;
-}
-.lineup-formation-head {
-  background: #fff5e4 !important;
-  border: 1px solid #e2bd78 !important;
-  border-radius: 7px !important;
-  padding: 4px 7px !important;
-}
-.lineup-formation-team,
-.lineup-formation-team span {
-  color: #650b18 !important;
-  font-weight: 900 !important;
-  text-shadow: none !important;
-}
-.lineup-formation-team small {
-  color: #684b36 !important;
-  font-weight: 700 !important;
-}
-.lineup-score {
-  color: #a51d31 !important;
-  font-weight: 1000 !important;
-  text-shadow: none !important;
-}
-.lineup-formation-note,
-.lineup-formation-legend {
-  color: #654b3d !important;
-  font-weight: 700 !important;
-}
-.lineup-formation-legend span {
-  color: #654b3d !important;
-}
-
-/* Header nama klub pada panel daftar pemain */
-.lineup-team-panel {
-  background: #fff !important;
-  border: 1px solid #d6a044 !important;
-}
-.lineup-team-panel-head {
-  background: linear-gradient(90deg, #650b18, #9b182b) !important;
-  color: #ffe2a0 !important;
-  border-bottom: 1px solid #d6a044 !important;
-}
-.lineup-team-panel-head *,
-.lineup-team-panel-head small {
-  color: #ffe2a0 !important;
-}
-.lineup-roster-section,
-.lineup-sub-label {
-  background: #fff2d8 !important;
-  color: #781321 !important;
-  border-color: #dfbd7b !important;
-  font-weight: 900 !important;
-}
-.lineup-player-row {
-  background: #fffdf9 !important;
-  border-bottom: 1px solid #eadfd0 !important;
-}
-.lineup-player-main,
-.lineup-player-main b {
-  color: #42131b !important;
-  font-weight: 800 !important;
-}
-.lineup-player-pos {
-  color: #76594a !important;
-  font-weight: 700 !important;
-}
-.lineup-rating {
-  background: #f3c15d !important;
-  color: #57101a !important;
-  font-weight: 900 !important;
-}
-
-/* Judul modal, tab, dan teks status */
-.match-modal-head strong { color: #ffe2a0 !important; }
-.match-modal-status,
-.match-formation,
-.match-muted,
-.match-player,
-.match-player small,
-.match-event,
-.match-stat-row {
-  color: #4b1019 !important;
-}
-.match-modal-tabs button {
-  color: #741321 !important;
-  background: #fff5e4 !important;
-  border-color: #e2bd78 !important;
-}
-.match-modal-tabs button.active {
-  color: #fff0ce !important;
-  background: linear-gradient(135deg, #a51d31, #650b18) !important;
-  border-color: #d6a044 !important;
-}
-
-/* Lapangan dan legenda tetap kontras dengan tulisan */
-.lineup-pitch {
-  border-color: #f7dfaa !important;
-}
-.pitch-player-name {
-  color: #fff5df !important;
-  background: #4b0712 !important;
-}
-.pitch-player-rating,
-.lineup-rating {
-  color: #57101a !important;
-  background: #f3c15d !important;
-}
-.pitch-player-rating.low,
-.lineup-rating.low {
-  color: #fff !important;
-  background: #a51d31 !important;
-}
-</style>
-
-
-
-<style id="SKORKITA-table-provider-red-text">
-/* Header tabel jadwal: latar merah, tulisan gold/putih yang kontras */
-.table-wrap .table-head {
-  background: linear-gradient(90deg, #650b18 0%, #8f1728 100%) !important;
-  border: 1px solid #d6a044 !important;
-  color: #ffe2a0 !important;
-}
-.table-wrap .table-head span {
-  color: #ffe2a0 !important;
-  font-weight: 900 !important;
-  text-shadow: 0 1px 2px #3d061055;
-}
-
-/* Provider: tulisan nama dan kategori dibuat merah maroon yang jelas */
-.providers .provider {
-  background: #fff !important;
-  border: 1px solid #e4c58c !important;
-}
-.providers .provider b {
-  color: #8f1728 !important;
-  font-weight: 900 !important;
-}
-.providers .provider small {
-  color: #a51d31 !important;
-  font-weight: 700 !important;
-}
-.providers .provider:hover {
-  border-color: #d6a044 !important;
-  background: #fffaf0 !important;
-}
-.providers .provider-logo {
-  background: linear-gradient(135deg, #8f1728, #4b0712) !important;
-  color: #ffe2a0 !important;
-  border: 1px solid #d6a044 !important;
-}
-
-/* Jaga keterbacaan judul bagian terkait */
-#jadwal .section-head h2,
-#provider .section-head h2 {
-  color: #8f1728 !important;
-}
-#jadwal .section-head p,
-#provider .section-head p {
-  color: #8a2632 !important;
-}
-</style>
-
-
-
-<style id="SKORKITA-provider-cards-red-gold-black">
-/* Kartu provider: gradasi merah, gold, dan hitam */
-.providers .provider,
-.provider {
-  background: linear-gradient(135deg, #3a080d 0%, #720d1b 42%, #b17a22 100%) !important;
-  border: 1px solid #e7bd62 !important;
-  border-radius: 12px !important;
-  color: #ffe7ad !important;
-  box-shadow:
-    0 5px 14px rgba(45, 5, 10, .18),
-    inset 0 1px 0 rgba(255, 235, 190, .22) !important;
-  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease !important;
-}
-.providers .provider b,
-.provider b {
-  color: #ffe2a0 !important;
-  font-weight: 900 !important;
-  text-shadow: 0 1px 2px rgba(0,0,0,.45);
-}
-.providers .provider small,
-.provider small {
-  color: #fff1d0 !important;
-  font-weight: 700 !important;
-}
-.providers .provider-logo,
-.provider .provider-logo {
-  background: linear-gradient(145deg, #e5b34f 0%, #9d6418 45%, #3a080d 100%) !important;
-  color: #fff4d8 !important;
-  border: 1px solid #ffe2a0 !important;
-  border-radius: 8px !important;
-  box-shadow: inset 0 1px 0 rgba(255,255,255,.35), 0 2px 6px rgba(0,0,0,.25) !important;
-}
-.providers .provider:hover,
-.provider:hover {
-  background: linear-gradient(135deg, #4a080f 0%, #941629 42%, #d39a36 100%) !important;
-  border-color: #ffdf91 !important;
-  box-shadow: 0 8px 20px rgba(100, 12, 25, .24), 0 0 0 2px rgba(231,189,98,.18) !important;
-  transform: translateY(-2px);
-}
-
-/* SKORKITA LOGO RESMI - V4: only branding, no ESPN data logic changed */
-header { min-height: 78px; height: 78px; }
-header .nav { min-height: 78px; height: 100%; }
-header a.brand { display: inline-flex; align-items: center; flex-shrink: 0; max-width: min(310px, 54vw); }
-header .brand-logo {
-  display: block; width: 230px; height: 72px; max-width: 100%;
-  object-fit: contain; object-position: left center;
-  filter: drop-shadow(0 2px 3px rgba(0,0,0,.2));
-}
-@media(max-width:600px) {
-  header { min-height: 66px; height: 66px; }
-  header .nav { min-height: 66px; }
-  header a.brand { max-width: 56vw; }
-  header .brand-logo { width: 168px; height: 60px; max-width: 100%; }
-}
-
-</style>
-
-</head>
+</meta></head>
 <body>
-
 <header>
-
 <div class="wrap nav">
-
-  <!-- LOGO WEBSITE -->
-  <a class="brand" href="./index.html" aria-label="SkorKita beranda"><img class="brand-logo" src="./skorkita-logo-resmi.png" alt="Logo resmi SkorKita"></a>
-
-  <!-- TOMBOL MENU -->
-  <button
-    class="menu-toggle"
-    id="menuToggle"
-    type="button"
-    aria-expanded="false"
-    aria-controls="navMenu"
-  >
+<!-- LOGO WEBSITE -->
+<a aria-label="SkorKita beranda" class="brand" href="./index.html"><img alt="Logo resmi SkorKita" class="brand-logo" src="./skorkita-logo-resmi.png"/></a>
+<!-- TOMBOL MENU -->
+<button aria-controls="navMenu" aria-expanded="false" class="menu-toggle" id="menuToggle" type="button">
     ☰ MENU
   </button>
-
-  <!-- DAFTAR MENU -->
-  <nav class="navlinks" id="navMenu">
-    <a href="#prediksi">Pertandingan</a>
-    <a href="#prediksi">Jadwal Liga</a>
-    <a href="#jadwal">Jadwal</a>
-    <a href="#provider">Sumber Data</a>
-  </nav>
-
+<!-- DAFTAR MENU -->
+<nav class="navlinks" id="navMenu">
+<a href="#prediksi">Pertandingan</a>
+<a href="#prediksi">Jadwal Liga</a>
+<a href="#jadwal">Jadwal</a>
+<a href="#provider">Sumber Data</a>
+</nav>
 </div>
-
 </header>
-
 <main class="wrap">
 <div class="page-head">
 <div>
 <div class="eyebrow">SKORKITA / SEPAK BOLA</div>
-<h1>Live Score & Jadwal Pertandingan</h1>
-<p>Skor langsung, jadwal, hasil, logo klub, lineup dan statistik dari ESPN.</p>
+<h1>Live Score &amp; Jadwal Pertandingan</h1>
+<p>Jadwal, skor langsung, prediksi simulasi, lineup dan statistik sepak bola dalam satu tempat.</p>
 </div>
 <button class="update" id="reload">↻ PERBARUI PERTANDINGAN</button>
 </div>
 <section class="hero">
 <div class="hero-bar">
-<strong>FEATURED MATCH</strong>
+<strong>FEATURED MATCH · TOP 50</strong>
 <span id="counter">MATCH 01</span>
 </div>
 <div class="hero-content" id="heroContent">
@@ -2298,8 +1984,8 @@ header .brand-logo {
 <div class="hero-tools">
 <div class="dots" id="dots">
 </div>
-<button class="arrow" id="prev" aria-label="Sebelumnya">‹</button>
-<button class="arrow" id="next" aria-label="Berikutnya">›</button>
+<button aria-label="Sebelumnya" class="arrow" id="prev">‹</button>
+<button aria-label="Berikutnya" class="arrow" id="next">›</button>
 </div>
 </div>
 </div>
@@ -2311,139 +1997,109 @@ header .brand-logo {
 <p>Jadwal pertandingan dan perkiraan skor simulasi (bukan prediksi AI).</p>
 </div>
 </div>
-  
 <!-- SEARCH PREDIKSI LIGA -->
 <div class="league-search">
-  <span class="search-icon">⌕</span>
-  <input
-    type="search"
-    id="leagueSearch"
-    placeholder="Cari liga atau nama tim..."
-    autocomplete="off"
-    aria-label="Cari liga atau tim"
-  >
-  <button type="button" id="clearLeagueSearch" aria-label="Hapus pencarian">
+<span class="search-icon">⌕</span>
+<input aria-label="Cari liga atau tim" autocomplete="off" id="leagueSearch" placeholder="Cari liga atau nama tim..." type="search"/>
+<button aria-label="Hapus pencarian" id="clearLeagueSearch" type="button">
     ✕
   </button>
 </div>
-
 <div class="league-slider">
-
-  <button class="league-arrow prev"
-          type="button"
-          aria-label="Geser liga ke kiri">
-    &#10094;
+<button aria-label="Geser liga ke kiri" class="league-arrow prev" type="button">
+    ❮
   </button>
-
-  <div class="league-filters" id="leagueFilters">
-
-    <button class="filter active" data-league="all">Semua Liga</button>
-
-    <!-- INGGRIS -->
-    <button class="filter" data-league="eng.1">Premier League</button>
-    <button class="filter" data-league="eng.2">Championship</button>
-    <button class="filter" data-league="eng.3">League One</button>
-    <button class="filter" data-league="eng.4">League Two</button>
-    <button class="filter" data-league="eng.fa">FA Cup</button>
-    <button class="filter" data-league="eng.league_cup">EFL Cup</button>
-
-    <!-- SPANYOL -->
-    <button class="filter" data-league="esp.1">La Liga</button>
-    <button class="filter" data-league="esp.2">La Liga 2</button>
-    <button class="filter" data-league="esp.copa_del_rey">Copa del Rey</button>
-
-    <!-- ITALIA -->
-    <button class="filter" data-league="ita.1">Serie A</button>
-    <button class="filter" data-league="ita.2">Serie B</button>
-    <button class="filter" data-league="ita.coppa_italia">Coppa Italia</button>
-
-    <!-- JERMAN -->
-    <button class="filter" data-league="ger.1">Bundesliga</button>
-    <button class="filter" data-league="ger.2">2. Bundesliga</button>
-    <button class="filter" data-league="ger.3">3. Liga</button>
-    <button class="filter" data-league="ger.dfb_pokal">DFB Pokal</button>
-
-    <!-- PRANCIS -->
-    <button class="filter" data-league="fra.1">Ligue 1</button>
-    <button class="filter" data-league="fra.2">Ligue 2</button>
-    <button class="filter" data-league="fra.coupe_de_france">Coupe de France</button>
-
-    <!-- EROPA -->
-    <button class="filter" data-league="uefa.champions">Champions League</button>
-    <button class="filter" data-league="uefa.europa">Europa League</button>
-    <button class="filter" data-league="uefa.europa.conf">Conference League</button>
-    <button class="filter" data-league="uefa.euro">EURO</button>
-    <button class="filter" data-league="uefa.nations">Nations League</button>
-
-    <!-- BELANDA & PORTUGAL -->
-    <button class="filter" data-league="ned.1">Eredivisie</button>
-    <button class="filter" data-league="ned.2">Eerste Divisie</button>
-    <button class="filter" data-league="por.1">Primeira Liga</button>
-    <button class="filter" data-league="por.cup">Taça de Portugal</button>
-
-    <!-- SKOTLANDIA & LAINNYA -->
-    <button class="filter" data-league="sco.1">Scottish Premiership</button>
-    <button class="filter" data-league="tur.1">Süper Lig</button>
-    <button class="filter" data-league="bel.1">Belgian Pro League</button>
-    <button class="filter" data-league="gre.1">Greek Super League</button>
-    <button class="filter" data-league="aut.1">Austrian Bundesliga</button>
-    <button class="filter" data-league="sui.1">Swiss Super League</button>
-
-    <!-- AMERIKA -->
-    <button class="filter" data-league="usa.1">MLS</button>
-    <button class="filter" data-league="usa.nwsl">NWSL Women</button>
-    <button class="filter" data-league="mex.1">Liga MX</button>
-    <button class="filter" data-league="bra.1">Brasileirão Serie A</button>
-    <button class="filter" data-league="bra.2">Brasileirão Serie B</button>
-    <button class="filter" data-league="arg.1">Argentina Primera</button>
-    <button class="filter" data-league="conmebol.libertadores">Copa Libertadores</button>
-    <button class="filter" data-league="conmebol.sudamericana">Copa Sudamericana</button>
-    <button class="filter" data-league="conmebol.america">Copa América</button>
-
-    <!-- ASIA -->
-    <button class="filter" data-league="afc.champions">AFC Champions League Elite</button>
-    <button class="filter" data-league="afc.cup">AFC Champions League Two</button>
-    <button class="filter" data-league="afc.asian.cup">AFC Asian Cup</button>
-    <button class="filter" data-league="ksa.1">Saudi Pro League</button>
-    <button class="filter" data-league="ksa.kings.cup">Saudi King's Cup</button>
-    <button class="filter" data-league="jpn.1">Japan J1 League</button>
-    <button class="filter" data-league="chn.1">Chinese Super League</button>
-    <button class="filter" data-league="ind.1">Indian Super League</button>
-    <button class="filter" data-league="tha.1">Thai League 1</button>
-    <button class="filter" data-league="mys.1">Malaysia Super League</button>
-    <button class="filter" data-league="idn.1">Indonesia Super League</button>
-    <button class="filter" data-league="sgp.1">Singapore Premier League</button>
-    <button class="filter" data-league="aus.1">Australia A-League</button>
-
-    <!-- AFRIKA -->
-    <button class="filter" data-league="caf.nations">Africa Cup of Nations</button>
-    <button class="filter" data-league="caf.champions">CAF Champions League</button>
-    <button class="filter" data-league="caf.confed">CAF Confederation Cup</button>
-    <button class="filter" data-league="rsa.1">South African Premiership</button>
-
-    <!-- FIFA & INTERNASIONAL -->
-    <button class="filter" data-league="fifa.world">FIFA World Cup</button>
-    <button class="filter" data-league="fifa.wwc">FIFA Women's World Cup</button>
-    <button class="filter" data-league="fifa.cwc">FIFA Club World Cup</button>
-    <button class="filter" data-league="fifa.world.u20">FIFA U-20 World Cup</button>
-    <button class="filter" data-league="fifa.world.u17">FIFA U-17 World Cup</button>
-    <button class="filter" data-league="fifa.worldq">World Cup Qualifiers</button>
-    <button class="filter" data-league="fifa.worldq.afc">FIFA Asian Qualifiers</button>
-    <button class="filter" data-league="fifa.worldq.uefa">FIFA European Qualifiers</button>
-    <button class="filter" data-league="fifa.worldq.concacaf">FIFA CONCACAF Qualifiers</button>
-    <button class="filter" data-league="fifa.worldq.conmebol">FIFA South American Qualifiers</button>
-    <button class="filter" data-league="fifa.worldq.caf">FIFA African Qualifiers</button>
-    <button class="filter" data-league="fifa.friendly">International Friendlies</button>
-    <button class="filter" data-league="fifa.olympics">Olympic Football</button>
-
-  </div>
-
-  <button class="league-arrow next"
-          type="button"
-          aria-label="Geser liga ke kanan">
-    &#10095;
+<div class="league-filters" id="leagueFilters">
+<button class="filter active" data-league="all">Semua Liga</button>
+<!-- INGGRIS -->
+<button class="filter" data-league="eng.1">Premier League</button>
+<button class="filter" data-league="eng.2">Championship</button>
+<button class="filter" data-league="eng.3">League One</button>
+<button class="filter" data-league="eng.4">League Two</button>
+<button class="filter" data-league="eng.fa">FA Cup</button>
+<button class="filter" data-league="eng.league_cup">EFL Cup</button>
+<!-- SPANYOL -->
+<button class="filter" data-league="esp.1">La Liga</button>
+<button class="filter" data-league="esp.2">La Liga 2</button>
+<button class="filter" data-league="esp.copa_del_rey">Copa del Rey</button>
+<!-- ITALIA -->
+<button class="filter" data-league="ita.1">Serie A</button>
+<button class="filter" data-league="ita.2">Serie B</button>
+<button class="filter" data-league="ita.coppa_italia">Coppa Italia</button>
+<!-- JERMAN -->
+<button class="filter" data-league="ger.1">Bundesliga</button>
+<button class="filter" data-league="ger.2">2. Bundesliga</button>
+<button class="filter" data-league="ger.3">3. Liga</button>
+<button class="filter" data-league="ger.dfb_pokal">DFB Pokal</button>
+<!-- PRANCIS -->
+<button class="filter" data-league="fra.1">Ligue 1</button>
+<button class="filter" data-league="fra.2">Ligue 2</button>
+<button class="filter" data-league="fra.coupe_de_france">Coupe de France</button>
+<!-- EROPA -->
+<button class="filter" data-league="uefa.champions">Champions League</button>
+<button class="filter" data-league="uefa.europa">Europa League</button>
+<button class="filter" data-league="uefa.europa.conf">Conference League</button>
+<button class="filter" data-league="uefa.euro">EURO</button>
+<button class="filter" data-league="uefa.nations">Nations League</button>
+<!-- BELANDA & PORTUGAL -->
+<button class="filter" data-league="ned.1">Eredivisie</button>
+<button class="filter" data-league="ned.2">Eerste Divisie</button>
+<button class="filter" data-league="por.1">Primeira Liga</button>
+<button class="filter" data-league="por.cup">Taça de Portugal</button>
+<!-- SKOTLANDIA & LAINNYA -->
+<button class="filter" data-league="sco.1">Scottish Premiership</button>
+<button class="filter" data-league="tur.1">Süper Lig</button>
+<button class="filter" data-league="bel.1">Belgian Pro League</button>
+<button class="filter" data-league="gre.1">Greek Super League</button>
+<button class="filter" data-league="aut.1">Austrian Bundesliga</button>
+<button class="filter" data-league="sui.1">Swiss Super League</button>
+<!-- AMERIKA -->
+<button class="filter" data-league="usa.1">MLS</button>
+<button class="filter" data-league="usa.nwsl">NWSL Women</button>
+<button class="filter" data-league="mex.1">Liga MX</button>
+<button class="filter" data-league="bra.1">Brasileirão Serie A</button>
+<button class="filter" data-league="bra.2">Brasileirão Serie B</button>
+<button class="filter" data-league="arg.1">Argentina Primera</button>
+<button class="filter" data-league="conmebol.libertadores">Copa Libertadores</button>
+<button class="filter" data-league="conmebol.sudamericana">Copa Sudamericana</button>
+<button class="filter" data-league="conmebol.america">Copa América</button>
+<!-- ASIA -->
+<button class="filter" data-league="afc.champions">AFC Champions League Elite</button>
+<button class="filter" data-league="afc.cup">AFC Champions League Two</button>
+<button class="filter" data-league="afc.asian.cup">AFC Asian Cup</button>
+<button class="filter" data-league="ksa.1">Saudi Pro League</button>
+<button class="filter" data-league="ksa.kings.cup">Saudi King's Cup</button>
+<button class="filter" data-league="jpn.1">Japan J1 League</button>
+<button class="filter" data-league="chn.1">Chinese Super League</button>
+<button class="filter" data-league="ind.1">Indian Super League</button>
+<button class="filter" data-league="tha.1">Thai League 1</button>
+<button class="filter" data-league="mys.1">Malaysia Super League</button>
+<button class="filter" data-league="idn.1">Indonesia Super League</button>
+<button class="filter" data-league="sgp.1">Singapore Premier League</button>
+<button class="filter" data-league="aus.1">Australia A-League</button>
+<!-- AFRIKA -->
+<button class="filter" data-league="caf.nations">Africa Cup of Nations</button>
+<button class="filter" data-league="caf.champions">CAF Champions League</button>
+<button class="filter" data-league="caf.confed">CAF Confederation Cup</button>
+<button class="filter" data-league="rsa.1">South African Premiership</button>
+<!-- FIFA & INTERNASIONAL -->
+<button class="filter" data-league="fifa.world">FIFA World Cup</button>
+<button class="filter" data-league="fifa.wwc">FIFA Women's World Cup</button>
+<button class="filter" data-league="fifa.cwc">FIFA Club World Cup</button>
+<button class="filter" data-league="fifa.world.u20">FIFA U-20 World Cup</button>
+<button class="filter" data-league="fifa.world.u17">FIFA U-17 World Cup</button>
+<button class="filter" data-league="fifa.worldq">World Cup Qualifiers</button>
+<button class="filter" data-league="fifa.worldq.afc">FIFA Asian Qualifiers</button>
+<button class="filter" data-league="fifa.worldq.uefa">FIFA European Qualifiers</button>
+<button class="filter" data-league="fifa.worldq.concacaf">FIFA CONCACAF Qualifiers</button>
+<button class="filter" data-league="fifa.worldq.conmebol">FIFA South American Qualifiers</button>
+<button class="filter" data-league="fifa.worldq.caf">FIFA African Qualifiers</button>
+<button class="filter" data-league="fifa.friendly">International Friendlies</button>
+<button class="filter" data-league="fifa.olympics">Olympic Football</button>
+</div>
+<button aria-label="Geser liga ke kanan" class="league-arrow next" type="button">
+    ❯
   </button>
-
 </div>
 <div class="match-grid" id="matchGrid">
 <div style="padding:20px;color:#7b8795">Memuat jadwal SkorKita</div>
@@ -2452,7 +2108,7 @@ header .brand-logo {
 <section class="section" id="jadwal">
 <div class="section-head">
 <div>
-<h2>Jadwal & hasil</h2>
+<h2>Jadwal &amp; hasil</h2>
 <p>Skor aktual terpisah dari tampilan prediksi.</p>
 </div>
 </div>
@@ -2511,12 +2167,8 @@ header .brand-logo {
 }
 
 </style>
-  <br/>
+<br/>
 </footer>
-
-
-
-
 <script>
 /* ==========================================
    SKORKITA — AUTO FIXTURE, LIVE SCORE,
@@ -3172,6 +2824,8 @@ const leagues = [
 ];
 
 let games = [];
+const FEATURED_MATCH_LIMIT = 50;
+const featuredCount = () => Math.min(FEATURED_MATCH_LIMIT, games.length);
 let slideIndex = 0;
 let leagueFilter = "all";
 let refreshTimer = null;
@@ -3656,7 +3310,7 @@ function heroMarkup(match) {
 function renderHero() {
   if (!games.length) return;
 
-  slideIndex = (slideIndex + games.length) % games.length;
+  slideIndex = (slideIndex + featuredCount()) % featuredCount();
 
   const match = games[slideIndex];
 
@@ -3664,14 +3318,14 @@ function renderHero() {
 
   $("counter").textContent =
     `MATCH ${String(slideIndex + 1).padStart(2, "0")} / ` +
-    String(games.length).padStart(2, "0");
+    String(featuredCount()).padStart(2, "0");
 
   $("heroDate").textContent =
     `${formatDateTime(match.date)} · ${statusLabel(match)}`;
 
-  $("dots").innerHTML = games.slice(0, 10).map((_, index) => `
-    <button class="${index === slideIndex % 10 ? "active" : ""}"
-      data-dot="${index}" aria-label="Slide ${index + 1}">
+  $("dots").innerHTML = Array.from({length: Math.min(10, featuredCount())}, (_, i) => Math.min(Math.max(slideIndex - 4, 0) + i, featuredCount() - 1)).map((itemIndex) => `
+    <button class="${itemIndex === slideIndex ? "active" : ""}"
+      data-dot="${itemIndex}" aria-label="Slide ${itemIndex + 1}">
     </button>
   `).join("");
 
@@ -3861,7 +3515,7 @@ async function loadMatches() {
 
     slideIndex = Math.min(
       slideIndex,
-      Math.max(0, games.length - 1)
+      Math.max(0, featuredCount() - 1)
     );
 
     if (!games.length) {
@@ -3918,7 +3572,7 @@ $("prev").onclick = () => {
   if (!games.length) return;
 
   slideIndex =
-    (slideIndex - 1 + games.length) % games.length;
+    (slideIndex - 1 + featuredCount()) % featuredCount();
 
   renderHero();
 };
@@ -3927,7 +3581,7 @@ $("next").onclick = () => {
   if (!games.length) return;
 
   slideIndex =
-    (slideIndex + 1) % games.length;
+    (slideIndex + 1) % featuredCount();
 
   renderHero();
 };
@@ -4161,33 +3815,30 @@ if (window.heroAutoSlideTimer) {
 
 window.heroAutoSlideTimer = setInterval(() => {
   if (document.hidden) return;
-  if (typeof games === "undefined" || games.length <= 1) return;
+  if (typeof games === "undefined" || featuredCount() <= 1) return;
 
-  slideIndex = (slideIndex + 1) % games.length;
+  slideIndex = (slideIndex + 1) % featuredCount();
   renderHero();
 }, 10000);
   
   </script>
-
-<div class="match-modal" id="matchModal" aria-hidden="true">
-  <div class="match-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="matchModalTitle">
-    <div class="match-modal-head">
-      <strong id="matchModalTitle">STATISTIK & LINEUP</strong>
-      <button class="match-modal-close" id="matchModalClose" type="button" aria-label="Tutup">×</button>
-    </div>
-    <div class="match-modal-content">
-      <div class="match-modal-tabs">
-        <button type="button" class="active" data-match-tab="lineup">LINEUP</button>
-        <button type="button" data-match-tab="stats">STATISTIK</button>
-        <button type="button" data-match-tab="events">EVENT</button>
-        <button type="button" data-match-tab="data">DATA</button>
-      </div>
-      <div id="matchModalBody"><p class="match-muted">Pilih pertandingan untuk melihat detail.</p></div>
-    </div>
-  </div>
+<div aria-hidden="true" class="match-modal" id="matchModal">
+<div aria-labelledby="matchModalTitle" aria-modal="true" class="match-modal-dialog" role="dialog">
+<div class="match-modal-head">
+<strong id="matchModalTitle">STATISTIK &amp; LINEUP</strong>
+<button aria-label="Tutup" class="match-modal-close" id="matchModalClose" type="button">×</button>
 </div>
-
-
+<div class="match-modal-content">
+<div class="match-modal-tabs">
+<button class="active" data-match-tab="lineup" type="button">LINEUP</button>
+<button data-match-tab="stats" type="button">STATISTIK</button>
+<button data-match-tab="events" type="button">EVENT</button>
+<button data-match-tab="data" type="button">DATA</button>
+</div>
+<div id="matchModalBody"><p class="match-muted">Pilih pertandingan untuk melihat detail.</p></div>
+</div>
+</div>
+</div>
 <style id="SKORKITA-remove-yellow-lineup-and-data">
 /* LINEUP: ganti seluruh aksen kuning menjadi putih dan biru */
 .lineup-formation-team,
@@ -4225,8 +3876,6 @@ window.heroAutoSlideTimer = setInterval(() => {
 }
 #matchModalBody h3 { color: #ffffff !important; }
 </style>
-
-
 <style id="SKORKITA-footer-banner-blue-white">
 /* Footer promotional GIF: ubah nuansa emas/kuning menjadi biru */
 .bottom-gif {
@@ -4249,1379 +3898,67 @@ footer .foot div {
 }
 </style>
 
-
-<style id="SKORKITA-TEMA-MERAH-PUTIH">
-/* TEMA MERAH PUTIH — hanya warna, layout dan fungsi tetap */
-:root{
-  --navy:#8f1024;
-  --navy2:#b51f36;
-  --blue:#c52b43;
-  --paper:#fff5f6;
-  --white:#ffffff;
-  --ink:#34151b;
-  --muted:#8b6870;
-  --line:#f0d6dc;
-  --accent:#e32645;
-  --red:#c51f3a;
-}
-body{background:#fff5f6!important;color:#34151b!important}
-header,
-header[style]{
-  background:linear-gradient(100deg,#850d22 0%,#bd1835 58%,#e33b55 100%)!important;
-  border-bottom:2px solid #fff!important;
-  box-shadow:0 3px 16px #9d18302b!important;
-}
-.brand em,.brand-mark{color:#fff!important}
-.brand-mark{border-color:#fff!important}
-.navlinks,.navlinks a,.navmeta,.header-date{color:#fff!important}
-.navlinks a:hover{color:#ffdce2!important}
-header .menu-toggle{
-  background:linear-gradient(135deg,#fff,#ffe8ec)!important;
-  border:1px solid #fff!important;color:#a3132c!important;
-}
-header #navMenu.navlinks{
-  background:linear-gradient(145deg,#a20f2a,#76091e)!important;
-  border:1px solid #fff!important;
-}
-header #navMenu.navlinks a:hover{background:#d52b47!important;color:#fff!important}
-main.wrap{
-  background:linear-gradient(180deg,#fff 0%,#fff7f8 55%,#ffeff2 100%)!important;
-}
-.page-head h1,.section-head h2{color:#481923!important}
-.eyebrow{color:#c51f3a!important}
-.update{
-  background:linear-gradient(135deg,#fff,#ffe9ed)!important;
-  border-color:#e8aab6!important;color:#a3132c!important;
-}
-.update:hover{background:#c51f3a!important;color:#fff!important}
-.hero{
-  background:linear-gradient(135deg,#65091b 0%,#a9102c 42%,#df3652 100%)!important;
-  border:1px solid #f2aab7!important;
-  box-shadow:0 10px 30px #9b18302b!important;
-}
-.hero-bar{background:linear-gradient(90deg,#750a20,#b81432,#d92d4a)!important;border-bottom:1px solid #ffffff55!important}
-.hero-bar strong,.score small{color:#fff!important}
-.hero-content{
-  background:radial-gradient(ellipse at 50% 0%,#ed7185 0%,#b91e3b 44%,transparent 78%),linear-gradient(135deg,#780a20,#b71936)!important;
-}
-.league-label,.team b,.team small,.kickoff,.hero-footer>span{color:#fff!important}
-.league-label:before,.league-label:after{background:#ffd5dc!important}
-.score{color:#fff!important;text-shadow:0 2px 12px #5e071b66!important}
-.arrow,.hero-tools .arrow{
-  background:linear-gradient(135deg,#fff,#ffe7ec)!important;
-  border:1px solid #fff!important;color:#a3132c!important;
-}
-.arrow:hover,.hero-tools .arrow:hover{background:#a9102c!important;border-color:#fff!important;color:#fff!important}
-.dots button.active,.hero-tools .dots button.active{background:#fff!important}
-.league-slider .league-filter,.league-slider .filter{
-  background:linear-gradient(135deg,#fff,#fff0f3)!important;
-  border-color:#e8aab6!important;color:#9f1830!important;
-}
-.league-slider .filter:hover,.league-slider .filter.active{
-  background:linear-gradient(135deg,#d72a48,#a9102c)!important;
-  border-color:#a9102c!important;color:#fff!important;
-  box-shadow:0 3px 10px #b51f3630!important;
-}
-.league-slider .league-arrow{
-  background:#fff!important;border-color:#e5a2af!important;color:#a9102c!important;
-}
-.league-slider .league-arrow:hover{background:#b71936!important;color:#fff!important;border-color:#b71936!important}
-.match-card{
-  background:#fff!important;border:1px solid #f0cbd3!important;
-}
-.match-card:hover{border-color:#d52b47!important;box-shadow:0 6px 20px #b51f3620!important}
-.match-top{background:linear-gradient(90deg,#fff0f3,#ffdfe5)!important;border-bottom-color:#f0cbd3!important}
-.match-top b{color:#9f1830!important}
-.mini-score,.mini-score small{color:#b71936!important}
-.match-foot{border-top-color:#f3dce1!important}
-.detail,.lineup-card-btn{
-  background:linear-gradient(135deg,#d92d4a,#a9102c)!important;
-  border:1px solid #a9102c!important;color:#fff!important;
-}
-.detail:hover,.lineup-card-btn:hover{background:linear-gradient(135deg,#a9102c,#780a20)!important;color:#fff!important}
-.ai-prediction{
-  background:linear-gradient(135deg,#fff5f6,#ffe8ed)!important;
-  border-color:#edb6c1!important;
-}
-.ai-prediction-head b,.ai-prediction-head span{color:#a3132c!important}
-.ai-prediction-head span{background:#ffdce3!important}
-.ai-prediction-cell{background:#fff!important;border-color:#f0cbd3!important}
-.ai-prediction-cell strong,.ai-scoreline{color:#9f1830!important}
-.table-wrap{background:#fff!important;border-color:#f0cbd3!important}
-.table-head{background:#fff0f3!important;color:#9b6470!important}
-.fixture{border-top-color:#f3dce1!important}
-.time,.league{color:#80515b!important}
-.actual-score{color:#a3132c!important}
-.state.live{background:#ffe5e9!important;color:#b71936!important}
-.provider{background:#fff!important;border-color:#f0cbd3!important}
-.provider-logo{background:linear-gradient(135deg,#b71936,#790b20)!important;color:#fff!important}
-.league-search{border-color:#e8aab6!important;box-shadow:0 3px 12px #b51f3610!important}
-.league-search:focus-within{border-color:#c51f3a!important;box-shadow:0 0 0 3px #c51f3a20!important}
-.league-search .search-icon{color:#b71936!important}
-footer{
-  background:linear-gradient(100deg,#76091e,#a9102c 58%,#d52b47)!important;
-  color:#fff!important;border-top:1px solid #f4b4c0!important;
-}
-footer .foot strong,footer .foot em,footer .foot div{color:#fff!important}
-footer .foot em{font-style:normal}
-.bottom-gif{
-  background:linear-gradient(90deg,#76091e,#c51f3a,#76091e)!important;
-  border-color:#fff!important;
-}
-.bottom-gif img{filter:none!important}
-
-/* Popup statistik dan lineup */
-.match-modal{background:#28040dcc!important}
-.match-modal-dialog{
-  background:#fff!important;color:#34151b!important;
-  border:1px solid #d52b47!important;
-}
-.match-modal-head{
-  background:linear-gradient(90deg,#8f1024,#d52b47)!important;
-  border-bottom:1px solid #f2b1bd!important;
-}
-.match-modal-head strong{color:#fff!important}
-.match-modal-close{background:#fff!important;border-color:#fff!important;color:#a3132c!important}
-.match-modal-tabs button{
-  background:#fff0f3!important;border-color:#e8aab6!important;color:#9f1830!important;
-}
-.match-modal-tabs button.active{background:#b71936!important;border-color:#b71936!important;color:#fff!important}
-.match-modal-status,.match-muted{color:#80515b!important}
-.match-team-panel,.lineup-team-panel{
-  background:#fff7f8!important;border-color:#edb6c1!important;
-}
-.match-team-title,.lineup-team-panel-head,.lineup-formation-team,
-.lineup-score,.lineup-roster-section,.lineup-sub-label,
-.lineup-player-main b,.lineup-player-pos,#matchModalBody h3{color:#a3132c!important}
-.lineup-team-panel-head{
-  background:linear-gradient(90deg,#a9102c,#d52b47)!important;color:#fff!important;
-}
-.lineup-team-panel-head small{color:#ffe8ec!important}
-.lineup-sub-label{background:#fff0f3!important;border-top-color:#edb6c1!important}
-.lineup-player-row,.match-player,.match-stat-row,.match-event{border-color:#f0d6dc!important;color:#4b2730!important}
-.match-player small,.lineup-formation-note,.lineup-formation-legend{color:#80515b!important}
-.match-stat-bar{background:#f4dce1!important}
-.match-stat-home{background:#c51f3a!important}
-.match-stat-away{background:#f5b9c4!important}
-.match-stat-row span{color:#5a3039!important}
-.lineup-formation-wrap{background:#fff7f8!important;border-color:#edb6c1!important}
-.lineup-rating.na{background:#f2dce1!important;color:#80515b!important}
-.pitch-player-name{background:#fff!important;color:#34151b!important;border:1px solid #f0cbd3!important}
-.pitch-player-rating.mid{background:#f5b9c4!important;color:#6d1022!important}
-#matchModalBody .match-muted[style*="border"]{
-  border-color:#edb6c1!important;background:#fff0f3!important;color:#80515b!important;
-}
-
-
-/* =====================================
-   SKORKITA - MAROON & WHITE THEME
-   Override warna saja; layout dan fungsi tetap.
-===================================== */
-:root {
-  --navy: #5b1020;
-  --navy2: #74172b;
-  --blue: #8b2438;
-  --paper: #fffafa;
-  --white: #ffffff;
-  --ink: #32151d;
-  --muted: #806b70;
-  --line: #eadde0;
-  --accent: #f0d9de;
-  --green: #19805b;
-  --red: #9f233b;
-  --gold: #8b2438;
-  --gold-light: #b94b60;
-  --gold-dark: #4a0c19;
-  --orange: #a52a43;
-}
-
-body { background: #fffafa !important; color: #32151d; }
-main.wrap {
-  background: linear-gradient(180deg, #ffffff 0%, #fffafa 55%, #f8eef1 100%) !important;
-}
-header, footer {
-  background: linear-gradient(110deg, #3d0915 0%, #681326 52%, #8b2438 100%) !important;
-  border-color: #a94a5d !important;
-}
-.brand em, .brand-mark { color: #f4dce1 !important; }
-.brand-mark { border-color: #d9aab4 !important; }
-.navlinks a:hover, .navlinks a:focus { color: #f4cbd3 !important; }
-header .menu-toggle {
-  background: linear-gradient(135deg, #f5e5e8, #d9aab4) !important;
-  border-color: #e7c4cb !important;
-  color: #4a0c19 !important;
-}
-header #navMenu.navlinks {
-  background: linear-gradient(145deg, #681326, #3d0915) !important;
-  border-color: #c47787 !important;
-}
-header #navMenu.navlinks a:hover {
-  background: #8b2438 !important;
-  color: #fff !important;
-}
-.page-head h1 { color: #4a0c19 !important; }
-.eyebrow { color: #8b2438 !important; }
-.update {
-  border-color: #d9aab4 !important;
-  background: linear-gradient(135deg, #fff, #f5e5e8) !important;
-  color: #681326 !important;
-}
-.update:hover { background: #8b2438 !important; color: #fff !important; }
-
-.hero {
-  background: linear-gradient(135deg, #3d0915 0%, #681326 48%, #a3344c 100%) !important;
-  border-color: #b65b6e !important;
-  box-shadow: 0 10px 30px #68132625 !important;
-}
-.hero-bar {
-  background: linear-gradient(90deg, #3d0915, #74172b) !important;
-  border-color: #ffffff24 !important;
-}
-.hero-bar strong, .score small { color: #f3d7dd !important; }
-.hero-content {
-  background:
-    radial-gradient(ellipse at 50% 0%, #a74359 0%, transparent 72%),
-    linear-gradient(135deg, #4a0c19, #74172b) !important;
-}
-.league-label { color: #f7e9ec !important; }
-.league-label:before, .league-label:after { background: #d9aab4 !important; }
-.team b, .score { color: #fff !important; }
-.team small, .kickoff, .hero-footer > span { color: #f0d9de !important; }
-.score { text-shadow: 0 2px 12px #25040b66 !important; }
-.hero-tools .arrow, .arrow {
-  background: linear-gradient(135deg, #74172b, #a3344c) !important;
-  border-color: #d9aab4 !important;
-  color: #fff !important;
-}
-.hero-tools .arrow:hover, .arrow:hover {
-  background: #f0d9de !important;
-  border-color: #fff !important;
-  color: #4a0c19 !important;
-}
-.dots button.active, .hero-tools .dots button.active { background: #f0d9de !important; }
-
-.league-slider .filter, .filters .filter {
-  background: linear-gradient(135deg, #fff, #f8eef1) !important;
-  border-color: #dfbfc6 !important;
-  color: #681326 !important;
-}
-.league-slider .filter:hover, .filters .filter:hover {
-  background: #f0d9de !important;
-  border-color: #a3344c !important;
-  color: #4a0c19 !important;
-}
-.league-slider .filter.active, .filters .filter.active {
-  background: linear-gradient(135deg, #8b2438, #5b1020) !important;
-  border-color: #5b1020 !important;
-  color: #fff !important;
-  box-shadow: 0 3px 10px #68132630 !important;
-}
-.league-slider .league-arrow {
-  background: #fff !important;
-  border-color: #dfbfc6 !important;
-  color: #681326 !important;
-}
-.league-slider .league-arrow:hover {
-  background: #8b2438 !important;
-  border-color: #8b2438 !important;
-  color: #fff !important;
-}
-.league-search {
-  border-color: #dfbfc6 !important;
-  box-shadow: 0 3px 12px #6813260d !important;
-}
-.league-search:focus-within {
-  border-color: #8b2438 !important;
-  box-shadow: 0 0 0 3px #8b243820 !important;
-}
-.league-search .search-icon { color: #8b2438 !important; }
-
-.match-card {
-  background: linear-gradient(180deg, #fff, #fffafb) !important;
-  border-color: #e4cbd1 !important;
-}
-.match-card:hover {
-  border-color: #a3344c !important;
-  box-shadow: 0 6px 20px #68132620 !important;
-}
-.match-top {
-  background: linear-gradient(90deg, #f8e9ed, #efd5dc) !important;
-  border-bottom-color: #e4c3cb !important;
-}
-.match-top b { color: #681326 !important; }
-.mini-score, .mini-score small { color: #8b2438 !important; }
-.match-foot { border-top-color: #ead8dd !important; }
-.detail {
-  background: linear-gradient(135deg, #8b2438, #5b1020) !important;
-  border-color: #8b2438 !important;
-  color: #fff !important;
-}
-.detail:hover {
-  background: linear-gradient(135deg, #a3344c, #74172b) !important;
-  color: #fff !important;
-}
-.lineup-card-btn {
-  background: #fff !important;
-  border-color: #8b2438 !important;
-  color: #681326 !important;
-}
-.lineup-card-btn:hover { background: #f8e9ed !important; color: #4a0c19 !important; }
-
-.table-wrap, .provider { border-color: #ead8dd !important; }
-.table-head { background: #f8eef1 !important; color: #806b70 !important; }
-.fixture { border-top-color: #ead8dd !important; }
-.actual-score { color: #681326 !important; }
-.state.live { background: #f8e9ed !important; color: #9f233b !important; }
-.provider-logo {
-  background: linear-gradient(135deg, #8b2438, #4a0c19) !important;
-  color: #fff !important;
-}
-.ai-prediction {
-  background: linear-gradient(135deg, #fff8fa, #f5e5e8) !important;
-  border-color: #dfbfc6 !important;
-}
-.ai-prediction-head b, .ai-prediction-head span { color: #681326 !important; }
-.ai-prediction-head span { background: #efd5dc !important; }
-.ai-prediction-cell { background: #fff !important; border-color: #ead8dd !important; }
-.ai-prediction-cell strong, .ai-scoreline { color: #681326 !important; }
-
-.hero-actions .hero-bet {
-  color: #fff !important;
-  background: linear-gradient(135deg, #a3344c, #681326) !important;
-  border-color: #d9aab4 !important;
-}
-.hero-actions .hero-lineup {
-  color: #f5dfe4 !important;
-  background: #4a0c19 !important;
-  border-color: #c47787 !important;
-}
-
-/* Popup statistik dan lineup */
-.match-modal { background: #1c0710cc !important; }
-.match-modal-dialog {
-  background: #fffafb !important;
-  color: #32151d !important;
-  border-color: #a3344c !important;
-}
-.match-modal-head {
-  background: linear-gradient(90deg, #4a0c19, #8b2438) !important;
-  border-bottom-color: #d9aab455 !important;
-}
-.match-modal-head strong { color: #fff !important; }
-.match-modal-close {
-  background: #4a0c19 !important;
-  border-color: #d9aab4 !important;
-  color: #fff !important;
-}
-.match-modal-tabs button {
-  background: #f8e9ed !important;
-  border-color: #dfbfc6 !important;
-  color: #681326 !important;
-}
-.match-modal-tabs button.active {
-  background: #8b2438 !important;
-  color: #fff !important;
-  border-color: #8b2438 !important;
-}
-.match-modal-status, .match-muted { color: #806b70 !important; }
-.match-team-panel, .lineup-team-panel {
-  background: #fff !important;
-  border-color: #e4cbd1 !important;
-}
-.match-team-title, .lineup-formation-team, .lineup-score { color: #8b2438 !important; }
-.match-player { color: #32151d !important; border-bottom-color: #ead8dd !important; }
-.match-player small { color: #806b70 !important; }
-.match-stat-row { border-bottom-color: #ead8dd !important; color: #32151d !important; }
-.match-stat-bar { background: #ead8dd !important; }
-.match-stat-home { background: #8b2438 !important; }
-.match-stat-away { background: #d9aab4 !important; }
-.match-event { color: #32151d !important; border-bottom-color: #ead8dd !important; }
-.lineup-formation-wrap {
-  background: linear-gradient(145deg, #fff, #f8eef1) !important;
-  border-color: #e4cbd1 !important;
-}
-.lineup-team-panel-head {
-  background: linear-gradient(90deg, #681326, #8b2438) !important;
-  color: #fff !important;
-}
-.lineup-team-panel-head small { color: #f5dfe4 !important; }
-.lineup-roster-section { color: #8b2438 !important; }
-.lineup-player-row { border-bottom-color: #ead8dd !important; }
-.lineup-player-main { color: #32151d !important; }
-.lineup-player-main b, .lineup-player-pos { color: #806b70 !important; }
-.lineup-sub-label {
-  color: #681326 !important;
-  border-top-color: #ead8dd !important;
-  background: #f8eef1 !important;
-}
-
-/* Seragam pemain: aksen maroon dan putih */
-.pitch-player.home .pitch-shirt {
-  background: linear-gradient(135deg, #a3344c, #5b1020) !important;
-}
-.pitch-player.away .pitch-shirt {
-  background: linear-gradient(135deg, #ffffff, #ead8dd) !important;
-  color: #681326 !important;
-  text-shadow: none !important;
-}
-.pitch-player.gk .pitch-shirt {
-  background: linear-gradient(135deg, #d9aab4, #8b2438) !important;
-  color: #fff !important;
-}
-.pitch-player-name { background: #4a0c19e8 !important; }
-
-
-
-/* =====================================
-   SKORKITA - RED, GOLD & BLACK THEME
-   Override warna saja; layout dan fungsi tetap.
-===================================== */
-:root {
-  --navy: #120b0d;
-  --navy2: #211014;
-  --blue: #35151c;
-  --paper: #f5f1ef;
-  --white: #ffffff;
-  --ink: #211417;
-  --muted: #817477;
-  --line: #e4d9d5;
-  --accent: #f2bd55;
-  --green: #19805b;
-  --red: #c62835;
-  --gold: #f2bd55;
-  --gold-light: #ffdc86;
-  --gold-dark: #a66a16;
-  --orange: #d83a32;
-}
-
-body {
-  background: #f5f1ef !important;
-  color: #211417 !important;
-}
-main.wrap {
-  background: linear-gradient(180deg, #fff 0%, #f8f4f1 58%, #eee7e3 100%) !important;
-}
-header, footer {
-  background: linear-gradient(110deg, #090708 0%, #1b0d10 55%, #3a1018 100%) !important;
-  border-color: #b77b28 !important;
-}
-header {
-  border-bottom: 2px solid #d99a32 !important;
-  box-shadow: 0 3px 16px #0003 !important;
-}
-.brand em, .brand-mark { color: #f2bd55 !important; }
-.brand-mark { border-color: #d99a32 !important; }
-.navlinks a:hover, .navlinks a:focus { color: #ffdc86 !important; }
-header .menu-toggle {
-  background: linear-gradient(135deg, #ffdc86, #d99a32) !important;
-  border-color: #f2bd55 !important;
-  color: #211014 !important;
-}
-header #navMenu.navlinks {
-  background: linear-gradient(145deg, #241014, #090708) !important;
-  border-color: #d99a32 !important;
-}
-header #navMenu.navlinks a:hover {
-  background: #4a151d !important;
-  color: #ffdc86 !important;
-}
-.page-head h1 { color: #261317 !important; }
-.eyebrow { color: #a66a16 !important; }
-.update {
-  border-color: #d9b56f !important;
-  background: linear-gradient(135deg, #fffaf0, #f6e5bd) !important;
-  color: #6e4210 !important;
-}
-.update:hover {
-  background: linear-gradient(135deg, #f2bd55, #d99a32) !important;
-  color: #211014 !important;
-}
-
-.hero {
-  background: linear-gradient(135deg, #090708 0%, #241014 48%, #751b25 100%) !important;
-  border: 1px solid #c18a35 !important;
-  box-shadow: 0 10px 30px #2b111a35 !important;
-}
-.hero-bar {
-  background: linear-gradient(90deg, #090708, #351018, #641720) !important;
-  border-color: #f2bd5540 !important;
-}
-.hero-bar strong, .score small { color: #ffdc86 !important; }
-.hero-content {
-  background:
-    radial-gradient(ellipse at 50% 0%, #8d2930 0%, transparent 70%),
-    linear-gradient(135deg, #120b0d, #42121b) !important;
-}
-.league-label { color: #f8e7c3 !important; }
-.league-label:before, .league-label:after { background: #d5a64d !important; }
-.team b { color: #fff !important; }
-.team small, .kickoff, .hero-footer > span { color: #e8d4c4 !important; }
-.score {
-  color: #ffdc86 !important;
-  text-shadow: 0 2px 12px #f2bd5533 !important;
-}
-.hero-tools .arrow, .arrow {
-  background: linear-gradient(135deg, #241014, #5a1720) !important;
-  border-color: #d99a32 !important;
-  color: #ffdc86 !important;
-}
-.hero-tools .arrow:hover, .arrow:hover {
-  background: linear-gradient(135deg, #ffdc86, #d99a32) !important;
-  border-color: #fff0c7 !important;
-  color: #211014 !important;
-}
-.dots button.active, .hero-tools .dots button.active { background: #f2bd55 !important; }
-
-.league-slider .filter, .filters .filter {
-  background: linear-gradient(135deg, #fff, #f8f1e8) !important;
-  border-color: #dfc99f !important;
-  color: #5b3714 !important;
-}
-.league-slider .filter:hover, .filters .filter:hover {
-  background: linear-gradient(135deg, #ffdc86, #f2bd55) !important;
-  border-color: #d99a32 !important;
-  color: #211014 !important;
-}
-.league-slider .filter.active, .filters .filter.active {
-  background: linear-gradient(135deg, #8f202b, #4a1018) !important;
-  border-color: #8f202b !important;
-  color: #fff !important;
-  box-shadow: 0 3px 10px #8f202b30 !important;
-}
-.league-slider .league-arrow {
-  background: #fffaf0 !important;
-  border-color: #dfc99f !important;
-  color: #8a5418 !important;
-}
-.league-slider .league-arrow:hover {
-  background: linear-gradient(135deg, #ffdc86, #d99a32) !important;
-  border-color: #d99a32 !important;
-  color: #211014 !important;
-}
-.league-search {
-  border-color: #dfc99f !important;
-  box-shadow: 0 3px 12px #7d4d190d !important;
-}
-.league-search:focus-within {
-  border-color: #c58b2c !important;
-  box-shadow: 0 0 0 3px #f2bd5530 !important;
-}
-.league-search .search-icon { color: #a66a16 !important; }
-
-.match-card {
-  background: linear-gradient(180deg, #fff, #fffaf7) !important;
-  border-color: #e3d5ce !important;
-}
-.match-card:hover {
-  border-color: #c18a35 !important;
-  box-shadow: 0 6px 20px #6c1c2520 !important;
-}
-.match-top {
-  background: linear-gradient(90deg, #f8eddd, #f1dfc2) !important;
-  border-bottom-color: #e7d2ad !important;
-}
-.match-top b { color: #6c3518 !important; }
-.mini-score, .mini-score small { color: #a3222d !important; }
-.match-foot { border-top-color: #eaded6 !important; }
-.detail {
-  background: linear-gradient(135deg, #f2bd55, #d99a32) !important;
-  border-color: #c58b2c !important;
-  color: #2b160b !important;
-}
-.detail:hover {
-  background: linear-gradient(135deg, #a9222e, #68131d) !important;
-  border-color: #a9222e !important;
-  color: #fff !important;
-}
-.lineup-card-btn {
-  background: linear-gradient(135deg, #241014, #090708) !important;
-  border-color: #d99a32 !important;
-  color: #ffdc86 !important;
-}
-.lineup-card-btn:hover {
-  background: linear-gradient(135deg, #8f202b, #4a1018) !important;
-  color: #fff !important;
-}
-.table-wrap, .provider { border-color: #e3d5ce !important; }
-.table-head { background: #f5eee8 !important; color: #817477 !important; }
-.fixture { border-top-color: #eaded6 !important; }
-.actual-score { color: #741b25 !important; }
-.state.live { background: #fae8e7 !important; color: #b51f2d !important; }
-.provider-logo {
-  background: linear-gradient(135deg, #241014, #090708) !important;
-  color: #f2bd55 !important;
-  border: 1px solid #b77b28 !important;
-}
-.ai-prediction {
-  background: linear-gradient(135deg, #fff9ed, #f4e4c7) !important;
-  border-color: #dfc28a !important;
-}
-.ai-prediction-head b, .ai-prediction-head span { color: #875515 !important; }
-.ai-prediction-head span { background: #f2dfb7 !important; }
-.ai-prediction-cell { background: #fff !important; border-color: #ead9b9 !important; }
-.ai-prediction-cell strong, .ai-scoreline { color: #751b25 !important; }
-
-.hero-actions .hero-bet {
-  color: #211014 !important;
-  background: linear-gradient(135deg, #ffdc86, #d99a32) !important;
-  border-color: #f2bd55 !important;
-}
-.hero-actions .hero-lineup {
-  color: #ffdc86 !important;
-  background: linear-gradient(135deg, #241014, #090708) !important;
-  border-color: #d99a32 !important;
-}
-
-/* Popup statistik dan lineup */
-.match-modal { background: #050304d9 !important; }
-.match-modal-dialog {
-  background: #171012 !important;
-  color: #f8eee4 !important;
-  border-color: #c18a35 !important;
-}
-.match-modal-head {
-  background: linear-gradient(90deg, #090708, #681720) !important;
-  border-bottom-color: #f2bd5544 !important;
-}
-.match-modal-head strong { color: #ffdc86 !important; }
-.match-modal-close {
-  background: #211014 !important;
-  border-color: #d99a32 !important;
-  color: #ffdc86 !important;
-}
-.match-modal-tabs button {
-  background: #2a1718 !important;
-  border-color: #75502b !important;
-  color: #f1dfc2 !important;
-}
-.match-modal-tabs button.active {
-  background: linear-gradient(135deg, #ffdc86, #d99a32) !important;
-  color: #211014 !important;
-  border-color: #d99a32 !important;
-}
-.match-modal-status, .match-muted { color: #d4bfa8 !important; }
-.match-team-panel, .lineup-team-panel {
-  background: #211719 !important;
-  border-color: #68451f !important;
-}
-.match-team-title, .lineup-formation-team, .lineup-score { color: #ffdc86 !important; }
-.match-player { color: #f8eee4 !important; border-bottom-color: #ffffff18 !important; }
-.match-player small { color: #c7b69c !important; }
-.match-stat-row { border-bottom-color: #ffffff18 !important; color: #f8eee4 !important; }
-.match-stat-bar { background: #49302a !important; }
-.match-stat-home { background: #d22b36 !important; }
-.match-stat-away { background: #f2bd55 !important; }
-.match-event { color: #eee !important; border-bottom-color: #ffffff18 !important; }
-.lineup-formation-wrap {
-  background: linear-gradient(145deg, #241719, #120d0e) !important;
-  border-color: #68451f !important;
-}
-.lineup-team-panel-head {
-  background: linear-gradient(90deg, #351018, #741b25) !important;
-  color: #ffdc86 !important;
-}
-.lineup-team-panel-head small { color: #f1d7a5 !important; }
-.lineup-roster-section { color: #ffdc86 !important; }
-.lineup-player-row { border-bottom-color: #ffffff18 !important; }
-.lineup-player-main { color: #f4eee4 !important; }
-.lineup-player-main b, .lineup-player-pos { color: #d9c7a7 !important; }
-.lineup-sub-label {
-  color: #ffdc86 !important;
-  border-top-color: #6a4925 !important;
-  background: #1b1112 !important;
-}
-
-/* Warna jersey tetap kontras dengan aksen merah, gold, dan hitam */
-.pitch-player.home .pitch-shirt {
-  background: linear-gradient(135deg, #d52b38, #7b101c) !important;
-}
-.pitch-player.away .pitch-shirt {
-  background: linear-gradient(135deg, #ffdc86, #c58b2c) !important;
-  color: #211014 !important;
-  text-shadow: none !important;
-}
-.pitch-player.gk .pitch-shirt {
-  background: linear-gradient(135deg, #f5eee5, #bda58c) !important;
-  color: #211014 !important;
-}
-.pitch-player-name { background: #090708e8 !important; }
-
-
-
-/* =====================================================
-   SKORKITA - STRICT RED & GOLD ONLY
-   Semua warna antarmuka diseragamkan ke palet merah/gold.
-   Logo gambar asli dan foto tim tidak difilter.
-===================================================== */
-:root {
-  --navy: #4a0710;
-  --navy2: #650b16;
-  --blue: #850f1d;
-  --paper: #4a0710;
-  --white: #ffe2a0;
-  --ink: #ffe2a0;
-  --muted: #d9a94e;
-  --line: #a66b20;
-  --accent: #ffd36b;
-  --green: #ffd36b;
-  --red: #b51222;
-  --gold: #ffd36b;
-  --gold-light: #ffe7a8;
-  --gold-dark: #a66b12;
-  --orange: #b51222;
-}
-
-/* Fondasi halaman */
-html, body {
-  background: #4a0710 !important;
-  color: #ffe2a0 !important;
-}
-body, main, main.wrap, .wrap {
-  color: #ffe2a0 !important;
-}
-main.wrap {
-  background: linear-gradient(180deg, #650b16 0%, #4a0710 55%, #35040a 100%) !important;
-}
-header, footer {
-  background: linear-gradient(110deg, #35040a 0%, #650b16 55%, #8d1020 100%) !important;
-  color: #ffe2a0 !important;
-  border-color: #d99a32 !important;
-}
-header { border-bottom: 2px solid #ffd36b !important; }
-.brand, .brand em, .brand-mark, .navlinks, .navlinks a,
-.navmeta, .header-date, .foot, .foot strong, .foot em {
-  color: #ffe2a0 !important;
-}
-.brand-mark { border-color: #ffd36b !important; }
-.navlinks a:hover { color: #fff0c2 !important; }
-
-/* Judul, teks, label */
-h1, h2, h3, h4, p, label, strong, b, small, span, em,
-.page-head h1, .section-head h2, .section-head p,
-.page-head p, .eyebrow, .note, .time, .league,
-.match-top b, .match-top span, .table-head,
-.fixture, .fixture-team b, .versus, .actual-score,
-.state, .provider b, .provider small {
-  color: #ffe2a0 !important;
-}
-.eyebrow, .mini-score, .mini-score small,
-.score, .score small, .ai-scoreline {
-  color: #ffd36b !important;
-}
-
-/* Semua panel dan kartu */
-.hero, .match-card, .table-wrap, .provider,
-.ai-prediction, .ai-prediction-cell,
-.lineup-formation-wrap, .lineup-team-panel,
-.match-team-panel {
-  background: linear-gradient(145deg, #650b16, #3b050b) !important;
-  border-color: #d99a32 !important;
-  color: #ffe2a0 !important;
-}
-.hero {
-  background: linear-gradient(135deg, #35040a 0%, #650b16 55%, #a51020 100%) !important;
-}
-.hero-bar, .match-modal-head, .lineup-team-panel-head {
-  background: linear-gradient(90deg, #35040a, #8d1020) !important;
-  border-color: #d99a32 !important;
-}
-.hero-content {
-  background:
-    radial-gradient(ellipse at 50% 0%, #b51222 0%, transparent 72%),
-    linear-gradient(135deg, #650b16, #35040a) !important;
-}
-.hero-footer, .match-foot, .match-top, .table-head,
-.fixture, .lineup-player-row, .lineup-sub-label {
-  border-color: #a66b20 !important;
-}
-.match-top {
-  background: linear-gradient(90deg, #8d1020, #650b16) !important;
-}
-.table-head, .lineup-sub-label {
-  background: #650b16 !important;
-}
-
-/* Tombol, filter, navigasi */
-button, .filter, .detail, .lineup-card-btn,
-.update, .league-arrow, .menu-toggle,
-.hero-actions a, .hero-actions button,
-.match-modal-close, .match-modal-tabs button {
-  background: linear-gradient(135deg, #a51020, #650b16) !important;
-  color: #ffe2a0 !important;
-  border-color: #ffd36b !important;
-}
-button:hover, .filter:hover, .detail:hover,
-.lineup-card-btn:hover, .update:hover,
-.league-arrow:hover, .menu-toggle:hover,
-.hero-actions a:hover, .hero-actions button:hover,
-.match-modal-close:hover, .match-modal-tabs button:hover {
-  background: linear-gradient(135deg, #ffd36b, #d99a32) !important;
-  color: #4a0710 !important;
-  border-color: #ffe7a8 !important;
-}
-.filter.active, .league-slider .filter.active,
-.filters .filter.active, .match-modal-tabs button.active {
-  background: linear-gradient(135deg, #ffd36b, #d99a32) !important;
-  color: #4a0710 !important;
-  border-color: #ffe7a8 !important;
-}
-.hero-actions .hero-bet {
-  background: linear-gradient(135deg, #ffd36b, #d99a32) !important;
-  color: #4a0710 !important;
-}
-.hero-actions .hero-lineup {
-  background: linear-gradient(135deg, #650b16, #35040a) !important;
-  color: #ffe2a0 !important;
-}
-
-/* Search dan input */
-.league-search, input, select, textarea {
-  background: #650b16 !important;
-  color: #ffe2a0 !important;
-  border-color: #d99a32 !important;
-}
-.league-search input { background: transparent !important; color: #ffe2a0 !important; }
-.league-search input::placeholder, input::placeholder, textarea::placeholder {
-  color: #d9a94e !important;
-}
-.league-search .search-icon, .league-search button { color: #ffd36b !important; }
-
-/* Prediksi */
-.ai-prediction {
-  background: linear-gradient(135deg, #7a0c19, #4a0710) !important;
-  border-color: #d99a32 !important;
-}
-.ai-prediction-head b, .ai-prediction-head span,
-.ai-prediction-cell small, .ai-prediction-cell strong,
-.ai-prediction-note, .ai-scoreline {
-  color: #ffe2a0 !important;
-}
-.ai-prediction-head span {
-  background: #a51020 !important;
-  border: 1px solid #ffd36b !important;
-}
-.ai-prediction-cell {
-  background: #650b16 !important;
-  border-color: #d99a32 !important;
-}
-
-/* Modal, statistik, lineup */
-.match-modal {
-  background: #35040add !important;
-}
-.match-modal-dialog {
-  background: linear-gradient(145deg, #650b16, #35040a) !important;
-  color: #ffe2a0 !important;
-  border-color: #ffd36b !important;
-}
-.match-modal-head strong, .match-modal-status,
-.match-team-title, .match-player, .match-player small,
-.match-stat-row, .match-event, .match-muted,
-.lineup-formation-team, .lineup-formation-team small,
-.lineup-score, .lineup-formation-legend,
-.lineup-formation-note, .lineup-player-main,
-.lineup-player-main b, .lineup-player-pos,
-.lineup-roster-section, .lineup-sub-label {
-  color: #ffe2a0 !important;
-}
-.match-team-panel, .lineup-team-panel {
-  background: #4a0710 !important;
-  border-color: #d99a32 !important;
-}
-.match-stat-bar { background: #8d1020 !important; }
-.match-stat-home { background: #ffd36b !important; }
-.match-stat-away { background: #b51222 !important; }
-.match-player, .match-event, .match-stat-row,
-.lineup-player-row { border-color: #a66b20 !important; }
-
-/* Lapangan, rating, status: tidak ada hijau/biru/warna lain */
-.lineup-pitch {
-  background:
-    repeating-linear-gradient(90deg, #9d1724 0 8.33%, #7a0c19 8.33% 16.66%) !important;
-  border-color: #ffd36b !important;
-  box-shadow: inset 0 0 22px #35040a !important;
-}
-.lineup-pitch:before, .lineup-pitch:after,
-.pitch-box, .pitch-small-box { border-color: #ffe7a8 !important; }
-.pitch-player.home .pitch-shirt {
-  background: linear-gradient(135deg, #ffd36b, #b87919) !important;
-  color: #4a0710 !important;
-}
-.pitch-player.away .pitch-shirt {
-  background: linear-gradient(135deg, #b51222, #650b16) !important;
-  color: #ffe2a0 !important;
-}
-.pitch-player.gk .pitch-shirt {
-  background: linear-gradient(135deg, #ffe7a8, #d99a32) !important;
-  color: #4a0710 !important;
-}
-.pitch-player-name {
-  background: #35040a !important;
-  color: #ffe2a0 !important;
-}
-.pitch-player-rating, .lineup-rating {
-  background: #ffd36b !important;
-  color: #4a0710 !important;
-}
-.pitch-player-rating.mid, .lineup-rating.mid {
-  background: #d99a32 !important;
-  color: #4a0710 !important;
-}
-.pitch-player-rating.low, .lineup-rating.low {
-  background: #b51222 !important;
-  color: #ffe2a0 !important;
-}
-.lineup-rating.na {
-  background: #650b16 !important;
-  color: #ffe2a0 !important;
-  border: 1px solid #d99a32 !important;
-}
-.state, .state.live {
-  background: #650b16 !important;
-  color: #ffe2a0 !important;
-  border: 1px solid #d99a32 !important;
-}
-
-/* Scrollbar dan garis pemisah */
-* {
-  scrollbar-color: #d99a32 #4a0710;
-}
-hr, .divider { border-color: #a66b20 !important; }
-
-
-
-/* BODY PUTIH - merah & gold tetap untuk aksen komponen */
-html, body {
-  background: #ffffff !important;
-  color: #4a0710 !important;
-}
-body {
-  background-color: #ffffff !important;
-}
-main.wrap {
-  background: #ffffff !important;
-  color: #4a0710 !important;
-}
-
-
-
-/* =========================================================
-   SKORKITA PREMIUM RED & GOLD
-   Body putih, komponen merah maroon dan gold.
-   Penyempurnaan visual tanpa mengubah struktur / posisi.
-========================================================= */
-:root {
-  --navy: #650b18 !important;
-  --navy2: #7c1020 !important;
-  --blue: #8f1728 !important;
-  --paper: #ffffff !important;
-  --white: #ffffff !important;
-  --ink: #4b1019 !important;
-  --muted: #8b6a68 !important;
-  --line: #ead8d2 !important;
-  --accent: #e5ad42 !important;
-  --gold: #f3c15d !important;
-  --gold-light: #ffe2a0 !important;
-  --gold-dark: #a96e18 !important;
-  --red: #b51f32 !important;
-}
-
-html, body {
-  background: #fff !important;
-  color: #4b1019 !important;
-}
-body {
-  background-image: radial-gradient(ellipse at 50% 0%, #fff9ed 0%, #fff 58%) !important;
-}
-main.wrap {
-  background: #fff !important;
-  border-radius: 0 0 16px 16px;
-}
-header {
-  background: linear-gradient(105deg, #3d0610 0%, #690b19 48%, #8f1728 100%) !important;
-  border-bottom: 2px solid #e5ad42 !important;
-  box-shadow: 0 5px 22px #4b101926 !important;
-}
-header .wrap.nav { background: transparent !important; }
-.brand-logo { filter: drop-shadow(0 2px 3px #1b000055); }
-
-/* LOGIN: ganti biru menjadi merah premium dengan outline gold */
-header .login-toggle,
-#loginButton {
-  display: inline-flex !important;
-  align-items: center;
-  justify-content: center;
-  min-width: 70px;
-  min-height: 38px;
-  padding: 0 17px;
-  border: 1px solid #f3c15d !important;
-  border-radius: 9px !important;
-  background: linear-gradient(135deg, #b51f32 0%, #760d1d 100%) !important;
-  color: #fff4d9 !important;
-  box-shadow: 0 3px 10px #25030a40, inset 0 1px 0 #ffffff26 !important;
-  font-size: 11px;
-  font-weight: 900;
-  letter-spacing: .35px;
-  text-decoration: none;
-  transition: transform .2s ease, box-shadow .2s ease, filter .2s ease;
-}
-header .login-toggle:hover,
-#loginButton:hover {
-  background: linear-gradient(135deg, #d02b3e, #8b1022) !important;
-  color: #fff !important;
-  box-shadow: 0 5px 15px #8b102244, 0 0 0 2px #f3c15d35 !important;
-  transform: translateY(-1px);
-}
-header .login-toggle:active,
-#loginButton:active { transform: scale(.97); }
-
-/* Menu tetap gold, dibuat lebih mewah */
-header .menu-toggle {
-  border: 1px solid #ffe1a0 !important;
-  border-radius: 9px !important;
-  background: linear-gradient(135deg, #ffe2a0 0%, #e5ad42 55%, #c88724 100%) !important;
-  color: #57101a !important;
-  box-shadow: 0 3px 10px #25030a30, inset 0 1px 0 #ffffff80 !important;
-  font-weight: 900 !important;
-  letter-spacing: .25px;
-  transition: transform .2s ease, box-shadow .2s ease;
-}
-header .menu-toggle:hover {
-  background: linear-gradient(135deg, #fff0c8, #f0bd58) !important;
-  color: #4b1019 !important;
-  transform: translateY(-1px);
-  box-shadow: 0 5px 14px #e5ad4245 !important;
-}
-header #navMenu.navlinks {
-  background: linear-gradient(150deg, #790f20, #3d0610) !important;
-  border: 1px solid #e5ad42 !important;
-  border-radius: 0 0 12px 12px !important;
-  box-shadow: 0 12px 28px #35050d40 !important;
-}
-header #navMenu.navlinks a {
-  color: #fff0d0 !important;
-  border-radius: 7px;
-  transition: background .2s ease, color .2s ease;
-}
-header #navMenu.navlinks a:hover {
-  background: linear-gradient(90deg, #a51c30, #7b1020) !important;
-  color: #ffe2a0 !important;
-}
-
-/* Judul halaman dan tombol refresh */
-.page-head h1, .section-head h2 { color: #75101e !important; }
-.eyebrow {
-  color: #b47a25 !important;
-  letter-spacing: 2px !important;
-}
-.page-head p, .section-head p { color: #8b6a68 !important; }
-.update {
-  background: linear-gradient(135deg, #fff7e7, #f5dfb3) !important;
-  border: 1px solid #d8a448 !important;
-  color: #70111e !important;
-  border-radius: 8px !important;
-  box-shadow: 0 3px 10px #7a43100d;
-}
-.update:hover {
-  background: linear-gradient(135deg, #f7d889, #dfa53a) !important;
-  color: #4b1019 !important;
-}
-
-/* Featured match */
-.hero {
-  background: linear-gradient(135deg, #3d0610 0%, #760d1e 55%, #a51d31 100%) !important;
-  border: 1px solid #d6a044 !important;
-  border-radius: 14px !important;
-  box-shadow: 0 12px 30px #5b0c1a25, 0 2px 5px #5b0c1a12 !important;
-}
-.hero-bar {
-  background: linear-gradient(90deg, #3d0610, #790f20, #9b182b) !important;
-  border-bottom: 1px solid #e5ad4266 !important;
-}
-.hero-bar strong { color: #ffe2a0 !important; }
-.hero-bar span { color: #f5dcae !important; }
-.hero-content {
-  background:
-    radial-gradient(ellipse at 50% 0%, #b62b3d 0%, transparent 68%),
-    linear-gradient(135deg, #760d1e, #4b0712) !important;
-}
-.league-label { color: #fff0d0 !important; }
-.league-label:before, .league-label:after { background: #e5ad42 !important; }
-.team b { color: #fff !important; }
-.team small, .kickoff, .hero-footer > span { color: #f3d9bd !important; }
-.score { color: #ffd36b !important; text-shadow: 0 2px 12px #f3c15d35 !important; }
-.score small { color: #ffe8b5 !important; }
-.hero-footer { border-top-color: #e5ad4266 !important; }
-.hero-tools .arrow {
-  background: linear-gradient(135deg, #8c1425, #4b0712) !important;
-  border: 1px solid #e5ad42 !important;
-  color: #ffe2a0 !important;
-  border-radius: 8px !important;
-  box-shadow: 0 2px 8px #28040a30;
-}
-.hero-tools .arrow:hover {
-  background: linear-gradient(135deg, #f6d27b, #d99a32) !important;
-  color: #57101a !important;
-}
-.dots button { background: #c77b78 !important; }
-.dots button.active { background: #ffd36b !important; }
-
-/* Search dan filter liga */
-.league-search {
-  background: #fff !important;
-  border: 1px solid #e6c98f !important;
-  border-radius: 10px !important;
-  box-shadow: 0 4px 14px #6b15200c !important;
-}
-.league-search:focus-within {
-  border-color: #b47a25 !important;
-  box-shadow: 0 0 0 3px #e5ad4226 !important;
-}
-.league-search .search-icon { color: #a51d31 !important; }
-.league-search input { color: #4b1019 !important; }
-.league-search input::placeholder { color: #a58b83 !important; }
-.league-slider .filter, .filters .filter {
-  background: linear-gradient(180deg, #fff, #fffaf2) !important;
-  border: 1px solid #e7d2ad !important;
-  border-radius: 9px !important;
-  color: #741321 !important;
-  box-shadow: 0 2px 6px #4b10190a;
-  transition: all .2s ease;
-}
-.league-slider .filter:hover, .filters .filter:hover {
-  background: linear-gradient(135deg, #fff0ca, #f1d18a) !important;
-  border-color: #d6a044 !important;
-  color: #5b0c18 !important;
-  transform: translateY(-1px);
-}
-.league-slider .filter.active, .filters .filter.active {
-  background: linear-gradient(135deg, #a51d31, #650b18) !important;
-  border-color: #e5ad42 !important;
-  color: #fff2d4 !important;
-  box-shadow: 0 4px 12px #6b102033 !important;
-}
-.league-slider .league-arrow {
-  background: #fffaf2 !important;
-  border: 1px solid #e2c38a !important;
-  color: #8c1425 !important;
-  border-radius: 9px !important;
-}
-.league-slider .league-arrow:hover {
-  background: linear-gradient(135deg, #f6d27b, #d99a32) !important;
-  color: #57101a !important;
-}
-
-/* Match cards - putih bersih dengan header merah dan garis gold */
-.match-card {
-  background: #fff !important;
-  border: 1px solid #eadbd5 !important;
-  border-radius: 11px !important;
-  box-shadow: 0 4px 14px #4b10190a !important;
-  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease !important;
-}
-.match-card:hover {
-  border-color: #d6a044 !important;
-  box-shadow: 0 9px 22px #6b152018 !important;
-  transform: translateY(-2px);
-}
-.match-top {
-  background: linear-gradient(90deg, #690d1a, #95192b) !important;
-  border-bottom: 1px solid #d6a044 !important;
-}
-.match-top b { color: #ffe5ad !important; }
-.match-top span { color: #f8d9a2 !important; }
-.match-body { background: #fff !important; }
-.mini-team b { color: #54101a !important; }
-.mini-score { color: #a51d31 !important; }
-.mini-score small { color: #a8792c !important; }
-.match-foot {
-  border-top: 1px solid #ead9c4 !important;
-  color: #927d73 !important;
-}
-.detail {
-  background: linear-gradient(135deg, #f7d889, #dfa53a) !important;
-  border: 1px solid #c58b2c !important;
-  color: #57101a !important;
-  border-radius: 7px !important;
-  box-shadow: inset 0 1px 0 #fff8dd;
-}
-.detail:hover {
-  background: linear-gradient(135deg, #a51d31, #650b18) !important;
-  color: #fff1d0 !important;
-}
-.lineup-card-btn {
-  background: linear-gradient(135deg, #8b1425, #570914) !important;
-  border: 1px solid #d6a044 !important;
-  color: #ffe2a0 !important;
-  border-radius: 7px !important;
-}
-.lineup-card-btn:hover {
-  background: linear-gradient(135deg, #a51d31, #6a0c1a) !important;
-  color: #fff !important;
-}
-
-/* Panel prediksi */
-.ai-prediction {
-  background: linear-gradient(135deg, #fffaf0, #fff2d9) !important;
-  border: 1px solid #e6c98f !important;
-  border-radius: 9px !important;
-}
-.ai-prediction-head b, .ai-prediction-head span { color: #781321 !important; }
-.ai-prediction-head span {
-  background: #f5dfae !important;
-  border: 1px solid #e3bd6b;
-}
-.ai-prediction-cell {
-  background: #fff !important;
-  border: 1px solid #ead8b5 !important;
-  border-radius: 7px !important;
-}
-.ai-prediction-cell small, .ai-prediction-note { color: #8b716b !important; }
-.ai-prediction-cell strong, .ai-scoreline { color: #8e1426 !important; }
-
-/* Jadwal, provider dan footer */
-.table-wrap, .provider {
-  background: #fff !important;
-  border-color: #eadbd5 !important;
-  border-radius: 10px !important;
-}
-.table-head { background: #fff4e2 !important; color: #8d6c58 !important; }
-.fixture { border-top-color: #eee2d7 !important; }
-.time, .league, .fixture-team b { color: #5b2730 !important; }
-.actual-score { color: #8e1426 !important; }
-.state { background: #fff3df !important; color: #7c4a1a !important; }
-.state.live { background: #a51d31 !important; color: #fff !important; }
-.provider-logo {
-  background: linear-gradient(135deg, #8b1425, #4b0712) !important;
-  color: #ffe2a0 !important;
-  border: 1px solid #d6a044 !important;
-}
-footer {
-  background: linear-gradient(105deg, #3d0610, #690b19 55%, #8f1728) !important;
-  border-top: 2px solid #e5ad42 !important;
-  color: #f1d7c4 !important;
-}
-.foot strong { color: #fff1d0 !important; }
-.foot em { color: #ffd36b !important; }
-
-/* Modal statistik / lineup - selaras dengan tema */
-.match-modal { background: #25040bd9 !important; }
-.match-modal-dialog {
-  background: #fffdf9 !important;
-  color: #4b1019 !important;
-  border: 1px solid #d6a044 !important;
-  border-radius: 13px !important;
-  box-shadow: 0 18px 55px #25040a55 !important;
-}
-.match-modal-head {
-  background: linear-gradient(90deg, #4b0712, #8e1426) !important;
-  border-bottom: 1px solid #e5ad42 !important;
-}
-.match-modal-head strong { color: #ffe2a0 !important; }
-.match-modal-close {
-  background: #760d1e !important;
-  border: 1px solid #e5ad42 !important;
-  color: #ffe2a0 !important;
-  border-radius: 7px !important;
-}
-.match-modal-tabs button {
-  background: #fff5e4 !important;
-  border: 1px solid #e6c98f !important;
-  color: #741321 !important;
-}
-.match-modal-tabs button.active {
-  background: linear-gradient(135deg, #a51d31, #650b18) !important;
-  border-color: #d6a044 !important;
-  color: #fff0ce !important;
-}
-.match-modal-status, .match-muted { color: #8b6a68 !important; }
-.match-team-panel, .lineup-team-panel {
-  background: #fff !important;
-  border: 1px solid #ead8c2 !important;
-  border-radius: 9px !important;
-}
-.match-team-title, .lineup-roster-section { color: #8e1426 !important; }
-.match-player, .match-stat-row, .match-event,
-.lineup-player-main, .lineup-player-main b, .lineup-player-pos {
-  color: #5b2730 !important;
-  border-color: #eee2d7 !important;
-}
-.match-player small { color: #987e73 !important; }
-.match-stat-bar { background: #f0e2d8 !important; }
-.match-stat-home { background: #a51d31 !important; }
-.match-stat-away { background: #e5ad42 !important; }
-.lineup-formation-wrap {
-  background: linear-gradient(145deg, #fffaf1, #fff0d8) !important;
-  border: 1px solid #e3bd78 !important;
-  border-radius: 10px !important;
-}
-.lineup-formation-team, .lineup-score { color: #8e1426 !important; }
-.lineup-formation-team small, .lineup-formation-legend,
-.lineup-formation-note { color: #92745e !important; }
-.lineup-team-panel-head {
-  background: linear-gradient(90deg, #690d1a, #95192b) !important;
-  color: #ffe2a0 !important;
-}
-.lineup-team-panel-head small { color: #f7dca8 !important; }
-.lineup-player-row { border-bottom-color: #eee2d7 !important; }
-.lineup-sub-label {
-  background: #fff5e4 !important;
-  border-top-color: #e3bd78 !important;
-  color: #8e1426 !important;
-}
-
-/* Pitch tetap bernuansa merah dan gold, bukan hijau/biru */
-.lineup-pitch {
-  background: repeating-linear-gradient(90deg, #8b1425 0 8.33%, #74101f 8.33% 16.66%) !important;
-  border: 2px solid #f4d38b !important;
-  box-shadow: inset 0 0 22px #35040a55 !important;
-}
-.lineup-pitch:before, .lineup-pitch:after,
-.pitch-box, .pitch-small-box { border-color: #ffe7b4 !important; }
-.pitch-player.home .pitch-shirt {
-  background: linear-gradient(135deg, #f6d27b, #c58b2c) !important;
-  color: #57101a !important;
-  text-shadow: none !important;
-}
-.pitch-player.away .pitch-shirt {
-  background: linear-gradient(135deg, #c62a3d, #710d1d) !important;
-  color: #fff !important;
-}
-.pitch-player.gk .pitch-shirt {
-  background: linear-gradient(135deg, #fff0c8, #d99a32) !important;
-  color: #57101a !important;
-}
-.pitch-player-name { background: #4b0712eF !important; color: #fff1d0 !important; }
-.pitch-player-rating, .lineup-rating {
-  background: #f3c15d !important;
-  color: #57101a !important;
-}
-.pitch-player-rating.mid, .lineup-rating.mid { background: #d99a32 !important; color: #4b1019 !important; }
-.pitch-player-rating.low, .lineup-rating.low { background: #a51d31 !important; color: #fff !important; }
-.pitch-player-rating.na, .lineup-rating.na {
-  background: #f8e7c8 !important;
-  color: #741321 !important;
-  border: 1px solid #d6a044 !important;
-}
-
-/* Responsif: kontrol login dan menu tetap rapi di layar kecil */
-@media (max-width: 600px) {
-  header .login-toggle, #loginButton {
-    min-width: 58px;
-    min-height: 34px;
-    padding: 0 11px;
-    font-size: 10px;
-  }
-  header .menu-toggle {
-    min-height: 34px;
-    padding: 8px 10px;
-    font-size: 10px;
-  }
-  .match-card:hover { transform: none; }
-}
-
-</style>
-
 <div id="skorkita-api-status" style="position:fixed;right:10px;bottom:10px;z-index:999;background:#10263c;color:#b8ffe7;border:1px solid #337a75;border-radius:8px;padding:7px 10px;font:11px system-ui;max-width:calc(100vw - 20px)">SkorKita DATA FIX V2 · Memuat...</div>
-</body>
+<style>
+/* SKORKITA BLUE / BLACK EDITION — 2026 */
+:root {color-scheme:dark;--navy:#040b18;--navy2:#091d3c;--blue:#0c4c9e;--paper:#050b16;--white:#f7fbff;--ink:#eef5ff;--muted:#9cb2d2;--line:#203858;--accent:#48a9ff;--green:#26d9a6;--red:#ff647e;--gold:#64b8ff;--gold-light:#92d5ff}
+html {background:#050b16}
+body {background:radial-gradient(ellipse at 50% 0%,#0e2a54 0,#060e1e 38%,#040811 100%) fixed!important;color:#ebf4ff!important}
+header,header[style] {background:linear-gradient(105deg,#020713 0%,#09254d 50%,#0b55a8 100%)!important;border-bottom:1px solid #296cba!important;box-shadow:0 5px 22px #0008!important}
+header .navlinks,header .navlinks a,header .navmeta {color:#d9eafe!important}
+header .navlinks a:hover{color:#77c7ff!important}
+header .menu-toggle,header .login-toggle,#loginButton {background:linear-gradient(125deg,#092146,#1457a3)!important;color:#f7fbff!important;border:1px solid #387bca!important}
+header #navMenu.navlinks{background:linear-gradient(130deg,#07152b,#113d7a)!important;border-color:#285c9d!important}
+main.wrap{background:transparent!important}
+.page-head h1,.section-head h2,.page-head p,.section-head p {color:#f1f7ff!important}
+.page-head p,.section-head p{color:#a8bfde!important}
+.eyebrow{color:#61bdff!important}
+.update,.league-arrow,.arrow,.hero-tools .arrow{background:linear-gradient(135deg,#0c3974,#1468be)!important;color:#fff!important;border:1px solid #368bd9!important}
+.update:hover,.league-arrow:hover,.arrow:hover{background:#197de0!important;color:#fff!important}
+.hero{background:linear-gradient(135deg,#020b20 0%,#092958 55%,#0b55a5 100%)!important;border:1px solid #2c76c9!important;box-shadow:0 14px 38px #0009,0 0 36px #075fc31a!important}
+.hero-bar{background:linear-gradient(90deg,#05132d,#0b326e,#125fae)!important;border-bottom:1px solid #2a64a5!important}
+.hero-bar strong,.hero-bar span,.score small{color:#89d1ff!important}
+.hero-content{background:radial-gradient(ellipse at 50% 0%,#1c6bc066 0%,transparent 65%),linear-gradient(130deg,#040e26,#123e75)!important}
+.hero .team b,.hero .team small,.hero .league-label,.hero .score,.hero .kickoff,.hero-footer>span{color:#fff!important}
+.hero .score{text-shadow:0 0 15px #028cff66!important}
+.hero .dots button.active{background:#42baff!important}
+.league-search{background:#091c37!important;border:1px solid #315a8a!important;box-shadow:none!important}
+.league-search input{color:#f2f8ff!important;background:transparent!important}
+.league-search input::placeholder{color:#92aac9!important}
+.league-search .search-icon{color:#6db9ff!important}
+.league-slider .filter,.league-slider .league-filter{background:linear-gradient(130deg,#0b1e3b,#123a70)!important;border:1px solid #294f83!important;color:#d1e5fa!important}
+.league-slider .filter.active,.league-slider .filter:hover{background:linear-gradient(130deg,#125db2,#258ce7)!important;color:#fff!important;border-color:#59baff!important}
+.match-card,.table-wrap,.provider,.providers .provider{background:linear-gradient(145deg,#0b1a31,#0b2447)!important;border:1px solid #234369!important;color:#ecf5ff!important;box-shadow:0 5px 14px #0003!important}
+.match-card:hover{border-color:#398fe3!important;box-shadow:0 9px 24px #0006!important}
+.match-top,.table-head{background:linear-gradient(90deg,#102d53,#143f77)!important;color:#bcd8f8!important;border-bottom:1px solid #295684!important}
+.match-top b,.mini-score,.mini-score small,.actual-score{color:#76c3ff!important}
+.match-foot,.fixture{border-color:#284462!important}
+.time,.league,.match-muted{color:#b0c3dd!important}
+.detail,.lineup-card-btn{background:linear-gradient(125deg,#0d4e9f,#1682df)!important;border:1px solid #287ec9!important;color:#fff!important}
+.detail:hover,.lineup-card-btn:hover{background:#218be9!important}
+.ai-prediction,.motif-prediction{background:linear-gradient(135deg,#0a2143,#103e75)!important;border:1px solid #295c99!important;color:#f0f7ff!important}
+.ai-prediction-head b,.ai-prediction-head span,.ai-scoreline,.ai-prediction-cell strong{color:#b8e3ff!important}
+.ai-prediction-cell{background:#091b37!important;border-color:#245080!important}
+.provider-logo{background:linear-gradient(145deg,#0c3269,#1a74cc)!important;color:#fff!important}
+footer{background:linear-gradient(100deg,#030b19,#0c2b56,#0c4992)!important;color:#c9def9!important;border-top:1px solid #235a9c!important}
+footer .foot strong,footer .foot em,footer .foot div{color:#e2efff!important}
+.bottom-gif{background:linear-gradient(90deg,#06152b,#103f78,#06152b)!important;border-color:#245385!important}
+.match-modal{background:#000b!important}
+.match-modal-dialog{background:#09182d!important;color:#f0f6ff!important;border:1px solid #367bbd!important}
+.match-modal-head{background:linear-gradient(90deg,#081b3a,#125aaf)!important;color:#fff!important}
+.match-modal-head strong{color:#fff!important}
+.match-modal-close{background:#143b70!important;color:#fff!important;border:1px solid #377ab8!important}
+.match-modal-tabs button{background:#132f53!important;color:#d7eaff!important;border-color:#2e5986!important}
+.match-modal-tabs button.active{background:#176ec5!important;color:#fff!important}
+.match-team-panel,.lineup-team-panel,.lineup-formation-wrap{background:#0c203d!important;border-color:#2c5481!important;color:#e2f1ff!important}
+.match-team-title,.lineup-formation-team,.lineup-score,.lineup-roster-section,.lineup-sub-label,.lineup-player-main b,.lineup-player-pos,#matchModalBody h3{color:#8ed0ff!important}
+.lineup-team-panel-head{background:linear-gradient(90deg,#103966,#1c69b5)!important;color:#fff!important}
+.lineup-player-row,.match-player,.match-stat-row,.match-event{color:#daeafb!important;border-color:#2b4a6e!important}
+.match-stat-bar{background:#213b5b!important}.match-stat-home{background:#278ce9!important}.match-stat-away{background:#83cdf7!important}
+.pitch-player-name{background:#091e39!important;color:#fff!important;border-color:#386a9f!important}
+#skorkita-api-status{background:#092447!important;color:#bfeaff!important;border-color:#286ea7!important}
+/* performance / navigation */
+#dots{max-width:min(480px,56vw);overflow:hidden;align-items:center}
+@media(max-width:650px){.hero-content{padding:18px 12px!important}.page-head h1{font-size:clamp(24px,7vw,34px)}#dots{max-width:145px}.hero-tools{gap:5px}}
+</style></body>
 </html>
