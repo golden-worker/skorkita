@@ -24,3 +24,6 @@ Catatan: urutan bisa berbeda dari MASKERTOTO jika waktu pemuatan, kumpulan liga,
 
 ## SkorKita Blue Black Edition
 Tema dark gradasi biru-hitam. Featured Match menampilkan hingga 50 pertandingan dari data ESPN yang berhasil tersedia, navigasi panah dan slider otomatis. Jika jumlah laga tersedia kurang dari 50, angka ditampilkan sesuai data aktual; tidak membuat pertandingan palsu. File HTML kedua yang diberikan adalah kode halaman OneDrive, bukan tampilan referensi situs.
+
+## Pembaruan: indikator API disembunyikan
+Widget status API di sudut bawah telah dihapus dari halaman publik. Pencatatan kegagalan request tetap tersedia melalui console browser.

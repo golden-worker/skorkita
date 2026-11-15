@@ -1966,7 +1966,7 @@ header #navMenu.navlinks a:hover {
 <div>
 <div class="eyebrow">SKORKITA / SEPAK BOLA</div>
 <h1>Live Score &amp; Jadwal Pertandingan</h1>
-<p>Jadwal, skor langsung, prediksi simulasi, lineup dan statistik sepak bola dalam satu tempat.</p>
+<p>Jadwal, skor langsung, prediksi, lineup dan statistik.</p>
 </div>
 <button class="update" id="reload">↻ PERBARUI PERTANDINGAN</button>
 </div>
@@ -1994,7 +1994,7 @@ header #navMenu.navlinks a:hover {
 <div class="section-head">
 <div>
 <h2>Pertandingan dari berbagai liga</h2>
-<p>Jadwal pertandingan dan perkiraan skor simulasi (bukan prediksi AI).</p>
+<p>Jadwal pertandingan dan perkiraan skor.</p>
 </div>
 </div>
 <!-- SEARCH PREDIKSI LIGA -->
@@ -2125,7 +2125,7 @@ header #navMenu.navlinks a:hover {
 </div>
 </div>
 </section>
-<section class="section" id="provider"><div class="section-head"><div><h2>Sumber data pertandingan</h2><p>SkorKita mengambil jadwal, skor, logo tim dan detail pertandingan dari ESPN. Ketersediaan data berbeda menurut liga. Perkiraan skor hanya simulasi berbasis rumus sederhana, bukan prediksi akurat atau odds resmi.</p></div></div></section>
+
 </main>
 <footer>
 <div class="wrap foot">
@@ -2990,8 +2990,6 @@ async function fetchAllMatches() {
     const r=rank(a)-rank(b); if(r) return r;
     return a.state === 'SELESAI' ? new Date(b.date)-new Date(a.date) : new Date(a.date)-new Date(b.date);
   });
-  const status = document.getElementById('skorkita-api-status');
-  if (status) status.textContent = `V3 URUT · ${matches.length} pertandingan · ${successes.length}/${leagues.length} liga terhubung${failures.length ? ' · '+failures.length+' request gagal' : ''}`;
   if (!successes.length) throw new Error(`Tidak ada liga yang berhasil: ${failures.slice(0,3).join('; ')}`);
   if (failures.length) console.warn('SkorKita: beberapa request gagal',failures);
   return matches;
@@ -3897,8 +3895,6 @@ footer .foot div {
   color: #ffffff !important;
 }
 </style>
-
-<div id="skorkita-api-status" style="position:fixed;right:10px;bottom:10px;z-index:999;background:#10263c;color:#b8ffe7;border:1px solid #337a75;border-radius:8px;padding:7px 10px;font:11px system-ui;max-width:calc(100vw - 20px)">SkorKita DATA FIX V2 · Memuat...</div>
 <style>
 /* SKORKITA BLUE / BLACK EDITION — 2026 */
 :root {color-scheme:dark;--navy:#040b18;--navy2:#091d3c;--blue:#0c4c9e;--paper:#050b16;--white:#f7fbff;--ink:#eef5ff;--muted:#9cb2d2;--line:#203858;--accent:#48a9ff;--green:#26d9a6;--red:#ff647e;--gold:#64b8ff;--gold-light:#92d5ff}
@@ -3956,7 +3952,7 @@ footer .foot strong,footer .foot em,footer .foot div{color:#e2efff!important}
 .lineup-player-row,.match-player,.match-stat-row,.match-event{color:#daeafb!important;border-color:#2b4a6e!important}
 .match-stat-bar{background:#213b5b!important}.match-stat-home{background:#278ce9!important}.match-stat-away{background:#83cdf7!important}
 .pitch-player-name{background:#091e39!important;color:#fff!important;border-color:#386a9f!important}
-#skorkita-api-status{background:#092447!important;color:#bfeaff!important;border-color:#286ea7!important}
+/* API status is logged to developer console only. */
 /* performance / navigation */
 #dots{max-width:min(480px,56vw);overflow:hidden;align-items:center}
 @media(max-width:650px){.hero-content{padding:18px 12px!important}.page-head h1{font-size:clamp(24px,7vw,34px)}#dots{max-width:145px}.hero-tools{gap:5px}}
